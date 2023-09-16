@@ -1,0 +1,1 @@
+import"./index.html";import"./index.scss";const multi=(i,o)=>i*o;console.log(multi(3,3));
