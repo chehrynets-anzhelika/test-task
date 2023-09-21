@@ -1,5 +1,10 @@
 body {
-    background-color: $background;
     color: $text;
     user-select: none;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+    padding: 0 20px 0 20px;
+    margin: 0 auto;
 }
