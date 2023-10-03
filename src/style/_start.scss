@@ -1,0 +1,183 @@
+.start {
+    background-color: $background;
+    padding: 48px 20px 20px 20px;
+
+    &-user-list {
+        @include flex(row, flex-start, center);
+
+        &__item {
+            @include flex(row, center, center);
+            border: 3px solid $white;
+            border-radius: 50%;
+            position: relative;
+
+            &:last-child::after {
+                content: "2K";
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                background-color: $white;
+                border-radius: 50%;
+                left: 27px;
+                text-align: center;
+                padding-top: 5px;
+                @include fonts(500, 18px, 24px);
+                color: $text;
+            }
+
+            &:last-child::before {
+                content: "reviews";
+                position: absolute;
+                left: 32px;
+                bottom: 5px;
+                text-align: center;
+                padding-top: 5px;
+                @include fonts(400, 10px, 12px);
+                color: $text;
+                z-index: 5;
+            }
+
+            &:not(:first-child) {
+                margin-left: -15px;
+            }
+        }
+    }
+
+    &-title {
+        text-transform: uppercase;
+        color: $white;
+        @include fonts(500, 40px, 44px);
+        margin: 14px auto;
+
+        &--italic {
+            color: $light;
+            font-style: italic;
+            cursor: pointer;
+        }
+    }
+
+    &-text {
+        color: $white;
+        @include fonts(400, 14px, 21px);
+        margin: 0 auto 20px;
+    }
+
+    &-button {
+        display: block;
+        cursor: pointer;
+        margin-bottom: 8px;
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        border: none;
+        background-color: $pink;
+        color: $orange;
+        text-transform: uppercase;
+        @include fonts(500, 14px, 16px);
+        transform: rotate(-14deg);
+
+        &:hover {
+            background-color: $light;
+        }
+
+        &--text:hover {
+            color: $background;
+        }
+    }
+
+    &-image {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &-list-button {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 5px;
+        width: 200px;
+        margin: 8px 0 0 auto;
+
+        &__item {
+            cursor: pointer;
+            border: 2px solid $white;
+            padding: 8px 14px;
+            border-radius: 20px;
+
+            &:hover {
+                background-color: $white;
+
+                .start-list-button__item-link {
+                    color: $text;
+
+                    &::before {
+                        content: "#";
+                        position: absolute;
+                        top: 0;
+                        color: $text;
+                        width: 15px;
+                        height: 25px;
+                        left: -10px;
+                    }
+                }
+            }
+
+            &-link {
+                text-transform: uppercase;
+                color: $white;
+                @include fonts(500, 10px, 15px);
+                @include flex(row, flex-start, center);
+                margin-left: 15px;
+                position: relative;
+
+                &::before {
+                    content: "#";
+                    position: absolute;
+                    top: 0;
+                    color: $white;
+                    width: 15px;
+                    height: 25px;
+                    left: -10px;
+                }
+            }
+        }
+
+    }
+
+    @include breakpoint-mf("md") {
+        &-title {
+            @include fonts(500, 54px, 64px);
+        }
+        &-text {
+            width: 75%;
+            margin: 0 auto 20px 0;
+        }
+        &-image {
+            width: 488px;
+            height: 393px;
+        }
+        &-button {
+            width: 114px;
+            height: 114px;
+            @include fonts(500, 24px, 24px);
+        }
+    }
+}
+
+@include breakpoint-mf("xl") {
+       .start {
+        @include flex(row, center, center);
+        &-title {
+            @include fonts(500, 64px, 75px);
+        }
+        &-image {
+            width: 517px;
+            height: 429px;
+        }
+        &-button {
+        width: 132px;
+        height: 132px;
+        @include fonts(500, 28px, 28px);
+       }
+    }
+}
