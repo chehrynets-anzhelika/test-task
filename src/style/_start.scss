@@ -1,6 +1,7 @@
 .start {
     background-color: $background;
-    padding: 48px 20px 20px 20px;
+    padding-top: 48px;
+    padding-bottom: 20px;
 
     &-user-list {
         @include flex(row, flex-start, center);
@@ -165,7 +166,7 @@
 }
 
 @include breakpoint-mf("xl") {
-       .start {
+       .start-wrapper {
         @include flex(row, center, center);
         &-title {
             @include fonts(500, 64px, 75px);
