@@ -811,6 +811,55 @@ try {
 
 /***/ }),
 
+/***/ "./src/handlers/clickOnHeaderMenu.js":
+/*!*******************************************!*\
+  !*** ./src/handlers/clickOnHeaderMenu.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ clickOnHeaderMenu)
+/* harmony export */ });
+// export default function clickOnHeaderMenu(elem) {
+//     elem.classList.contains("header-menu--open") ? 
+//     elem.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+//     <path d="M18 6L6 18" stroke="#77AC63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+//     <path d="M6 6L18 18" stroke="#77AC63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+//     </svg>
+//     ` : elem.innerHTML = `<svg width="20" height="14" viewBox="0 0 20 14" fill="none"
+//     xmlns="http://www.w3.org/2000/svg">
+//     <path
+//         d="M0 0.995C0 0.445 0.446 0 0.995 0H9.005C9.26889 7.86455e-09 9.52197 0.10483 9.70857 0.291429C9.89517 0.478027 10 0.731109 10 0.995C10 1.25889 9.89517 1.51197 9.70857 1.69857C9.52197 1.88517 9.26889 1.99 9.005 1.99H0.995C0.731109 1.99 0.478028 1.88517 0.291429 1.69857C0.10483 1.51197 0 1.25889 0 0.995ZM0 7C0 6.45 0.446 6.005 0.995 6.005H19.005C19.2689 6.005 19.522 6.10983 19.7086 6.29643C19.8952 6.48303 20 6.73611 20 7C20 7.26389 19.8952 7.51697 19.7086 7.70357C19.522 7.89017 19.2689 7.995 19.005 7.995H0.995C0.731109 7.995 0.478028 7.89017 0.291429 7.70357C0.10483 7.51697 0 7.26389 0 7ZM0.995 12.01C0.731109 12.01 0.478028 12.1148 0.291429 12.3014C0.10483 12.488 0 12.7411 0 13.005C0 13.2689 0.10483 13.522 0.291429 13.7086C0.478028 13.8952 0.731109 14 0.995 14H13.005C13.2689 14 13.522 13.8952 13.7086 13.7086C13.8952 13.522 14 13.2689 14 13.005C14 12.7411 13.8952 12.488 13.7086 12.3014C13.522 12.1148 13.2689 12.01 13.005 12.01H0.995Z"
+//         fill="#77AC63" />
+//     </svg>`; 
+// }
+
+function clickOnHeaderMenu(elem, main) {
+  const div = document.createElement('div');
+  div.className = "selected-menu";
+  if (elem.classList.contains("header-menu--open")) {
+    elem.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <path d="M18 6L6 18" stroke="#77AC63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+     <path d="M6 6L18 18" stroke="#77AC63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+     </svg>`;
+    main.after(div);
+  } else {
+    elem.innerHTML = `<svg width="20" height="14" viewBox="0 0 20 14" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+     <path
+         d="M0 0.995C0 0.445 0.446 0 0.995 0H9.005C9.26889 7.86455e-09 9.52197 0.10483 9.70857 0.291429C9.89517 0.478027 10 0.731109 10 0.995C10 1.25889 9.89517 1.51197 9.70857 1.69857C9.52197 1.88517 9.26889 1.99 9.005 1.99H0.995C0.731109 1.99 0.478028 1.88517 0.291429 1.69857C0.10483 1.51197 0 1.25889 0 0.995ZM0 7C0 6.45 0.446 6.005 0.995 6.005H19.005C19.2689 6.005 19.522 6.10983 19.7086 6.29643C19.8952 6.48303 20 6.73611 20 7C20 7.26389 19.8952 7.51697 19.7086 7.70357C19.522 7.89017 19.2689 7.995 19.005 7.995H0.995C0.731109 7.995 0.478028 7.89017 0.291429 7.70357C0.10483 7.51697 0 7.26389 0 7ZM0.995 12.01C0.731109 12.01 0.478028 12.1148 0.291429 12.3014C0.10483 12.488 0 12.7411 0 13.005C0 13.2689 0.10483 13.522 0.291429 13.7086C0.478028 13.8952 0.731109 14 0.995 14H13.005C13.2689 14 13.522 13.8952 13.7086 13.7086C13.8952 13.522 14 13.2689 14 13.005C14 12.7411 13.8952 12.488 13.7086 12.3014C13.522 12.1148 13.2689 12.01 13.005 12.01H0.995Z"
+         fill="#77AC63" />
+     </svg>`;
+    let el = document.querySelector(".selected-menu");
+    el.remove();
+    div.remove();
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/core-js/es6/index.js":
 /*!*******************************************!*\
   !*** ./node_modules/core-js/es6/index.js ***!
@@ -9883,25 +9932,421 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_libs_normalize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! -!../node_modules/css-loader/dist/cjs.js!./libs/normalize.css */ "./node_modules/css-loader/dist/cjs.js!./src/libs/normalize.css");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3__);
 // Imports
 
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ Object(function webpackMissingModule() { var e = new Error("Cannot find module '../images/svg/bg.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_libs_normalize_css__WEBPACK_IMPORTED_MODULE_2__["default"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_3___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `body {
-  background-color: #A1C487;
   color: #141414;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  font-family: "DM Sans", sans-serif;
 }
 
-.header {
-  display: block;
+.container {
+  padding: 0 20px 0 20px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .section-title--position {
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (min-width: 1200px) {
+  .section-title--position {
+    margin: 0;
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  .section-title {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+@media (min-width: 1200px) {
+  .section-title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 50px;
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-}`, "",{"version":3,"sources":["webpack://./src/style/_style.scss","webpack://./src/style/_constants.scss","webpack://./src/index.scss","webpack://./src/style/_header.scss"],"names":[],"mappings":"AAAA;EACI,yBCGS;EDFT,cCCG;EDAH,yBAAA;KAAA,sBAAA;UAAA,iBAAA;AEEJ;;ACLA;EACI,cAAA;EACA,8BAAA;ADQJ","sourcesContent":["body {\r\n    background-color: $background;\r\n    color: $text;\r\n    user-select: none;\r\n}","// $background: rgb(149, 48, 30);\r\n// $text: rgb(37, 42, 40);\r\n\r\n$text: #141414;\r\n$background: #A1C487;\r\n$light: #EAF7E5;\r\n$orange: #FC8A11;\r\n$pink: #FAF3E7;\r\n$gray: #F3F3F3;\r\n\r\n\r\n\r\n","@import \"libs/normalize.css\";\r\n@import \"style/fonts\";\r\n@import \"style/constants\";\r\n@import \"style/style\";\r\n@import \"style/header\";\r\n\r\n\r\n",".header {\r\n    display: block;\r\n    justify-content: space-between;\r\n}"],"sourceRoot":""}]);
+  align-items: center;
+  background-color: #FFF;
+  padding: 17px 20px;
+  height: 50px;
+}
+
+.header-nav {
+  display: none;
+  list-style-type: none;
+}
+.header-nav-selected-menu {
+  display: block;
+  position: absolute;
+  top: 175px;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  z-index: 10;
+}
+.header-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.header-nav-list__item-link {
+  color: #FFF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.logo {
+  color: #141414;
+  text-transform: uppercase;
+  display: flex;
+  gap: 8px;
+}
+.logo-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+
+.header-basket {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-basket {
+    display: block;
+  }
+  .header-menu {
+    display: none;
+  }
+  .header-nav {
+    display: flex;
+    order: 1;
+  }
+  .header-nav-list {
+    flex-direction: row;
+  }
+  .header-nav-list__item-link {
+    color: #141414;
+  }
+  .logo {
+    order: 2;
+    position: absolute;
+    top: 17px;
+    width: 124px;
+    left: 50%;
+    margin-left: -62px;
+  }
+  .header-shopping-cart {
+    order: 3;
+  }
+}
+.selected-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: #A1C487;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 5;
+}
+
+.start {
+  background-color: #A1C487;
+  padding-top: 48px;
+  padding-bottom: 20px;
+}
+.start-user-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.start-user-list__item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #FFF;
+  border-radius: 50%;
+  position: relative;
+}
+.start-user-list__item:last-child::after {
+  content: "2K";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: #FFF;
+  border-radius: 50%;
+  left: 27px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #141414;
+}
+.start-user-list__item:last-child::before {
+  content: "reviews";
+  position: absolute;
+  left: 32px;
+  bottom: 5px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: #141414;
+  z-index: 5;
+}
+.start-user-list__item:not(:first-child) {
+  margin-left: -15px;
+}
+.start-title {
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 44px;
+  margin: 14px auto;
+}
+.start-title--italic {
+  color: #EAF7E5;
+  font-style: italic;
+  cursor: pointer;
+}
+.start-text {
+  color: #FFF;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0 auto 20px;
+}
+.start-button {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 8px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FAF3E7;
+  color: #FC8A11;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  transform: rotate(-14deg);
+}
+.start-button:hover {
+  background-color: #EAF7E5;
+}
+.start-button--text:hover {
+  color: #A1C487;
+}
+.start-image {
+  display: block;
+  margin: 0 auto;
+}
+.start-list-button {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 5px;
+  gap: 5px;
+  width: 200px;
+  margin: 8px 0 0 auto;
+}
+.start-list-button__item {
+  cursor: pointer;
+  border: 2px solid #FFF;
+  padding: 8px 14px;
+  border-radius: 20px;
+}
+.start-list-button__item:hover {
+  background-color: #FFF;
+}
+.start-list-button__item:hover .start-list-button__item-link {
+  color: #141414;
+}
+.start-list-button__item:hover .start-list-button__item-link::before {
+  content: "#";
+  position: absolute;
+  top: 0;
+  color: #141414;
+  width: 15px;
+  height: 25px;
+  left: -10px;
+}
+.start-list-button__item-link {
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15px;
+  position: relative;
+}
+.start-list-button__item-link::before {
+  content: "#";
+  position: absolute;
+  top: 0;
+  color: #FFF;
+  width: 15px;
+  height: 25px;
+  left: -10px;
+}
+@media (min-width: 768px) {
+  .start-title {
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 64px;
+  }
+  .start-text {
+    width: 75%;
+    margin: 0 auto 20px 0;
+  }
+  .start-image {
+    width: 488px;
+    height: 393px;
+  }
+  .start-button {
+    width: 114px;
+    height: 114px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .start-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .start-wrapper-title {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 75px;
+  }
+  .start-wrapper-image {
+    width: 517px;
+    height: 429px;
+  }
+  .start-wrapper-button {
+    width: 132px;
+    height: 132px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+.order-info {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.order-info-img {
+  margin: 20px auto;
+  display: block;
+}
+@media (min-width: 768px) {
+  .order-info-img {
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .order-info-img {
+    width: 410px;
+    height: 170px;
+  }
+}
+.order-info-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+.order-info-text-wrap__item {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .order-info-text-wrap__item {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .order-info-text-wrap__item {
+    width: 25%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .order-info-text-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .order-info-header-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.order-steps {
+  background-image: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+}`, "",{"version":3,"sources":["webpack://./src/style/_style.scss","webpack://./src/style/_constants.scss","webpack://./src/index.scss","webpack://./src/style/_mixins.scss","webpack://./src/style/_header.scss","webpack://./src/style/_start.scss","webpack://./src/style/_section-order-info.scss","webpack://./src/style/_section-order-steps.scss"],"names":[],"mappings":"AAAA;EACI,cCDG;EDEH,yBAAA;KAAA,sBAAA;UAAA,iBAAA;EACA,kCAAA;AEEJ;;AFCA;EACI,sBAAA;EACA,cAAA;AEEJ;;AFCA;EACI,kBAAA;EACA,yBAAA;EG6BF,gBH5BiB;EG6BjB,eH7BsB;EG8BtB,iBH9B4B;EAC1B,cAAA;AEIJ;ACLE;EHGM;IACG,UAAA;EEKT;AACF;ACVE;EHGM;IAGI,SAAA;IACA,gBAAA;EEQV;AACF;AChBE;EHHF;IG+BE,gBHhBqB;IGiBrB,eHjB0B;IGkB1B,iBHlBgC;EEUhC;AACF;ACvBE;EHHF;IG+BE,gBHbqB;IGcrB,eHd0B;IGe1B,iBHfgC;EEchC;AACF;;AE1CA;EDiCE,aAAA;EACA,mBCjCgB;EDkChB,8BClCqB;EDmCrB,mBCnCoC;EAClC,sBAAA;EACA,kBAAA;EACA,YAAA;AFgDJ;;AE5CA;EACI,aAAA;EACA,qBAAA;AF+CJ;AE9CI;EACI,cAAA;EACA,kBAAA;EACA,UAAA;EACA,YAAA;EACA,SAAA;EACA,mBAAA;EACA,WAAA;AFgDR;AE7CI;EDYF,aAAA;EACA,sBCZoB;EDapB,uBCb4B;EDc5B,mBCdmC;EAC7B,SAAA;AFkDR;AEjDQ;EACQ,WHrBR;EEoCN,gBCd6B;EDe7B,eCfkC;EDgBlC,iBChBwC;AFqD1C;;AEhDA;EACI,cHlCG;EGmCH,yBAAA;EACA,aAAA;EACA,QAAA;AFmDJ;AElDI;EDIF,gBCHqB;EDIrB,eCJ0B;EDK1B,iBCLgC;EAC1B,SAAA;AFsDR;;AElDA;EACI,aAAA;AFqDJ;;ACpFE;ECmCE;IACI,cAAA;EFqDN;EEnDE;IACI,aAAA;EFqDN;EEnDE;IACI,aAAA;IACA,QAAA;EFqDN;EEpDM;IACI,mBAAA;EFsDV;EErDU;IACI,cH7DT;ECoHL;EElDE;IACI,QAAA;IACA,kBAAA;IACA,SAAA;IACA,YAAA;IACA,SAAA;IACA,kBAAA;EFoDN;EElDE;IACI,QAAA;EFoDN;AACF;AEjDA;EACI,YAAA;EACA,aAAA;EACA,yBHjFS;EGkFT,kBAAA;EACA,SAAA;EACA,OAAA;EACA,UAAA;AFmDJ;;AGzIA;EACI,yBAAA;EACA,iBAAA;EACA,oBAAA;AH4IJ;AG1II;EF8BF,aAAA;EACA,mBE9BoB;EF+BpB,2BE/ByB;EFgCzB,mBEhCqC;AH+IvC;AG7IQ;EF2BN,aAAA;EACA,mBE3BwB;EF4BxB,uBE5B6B;EF6B7B,mBE7BqC;EAC3B,sBAAA;EACA,kBAAA;EACA,kBAAA;AHkJZ;AGhJY;EACI,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,sBJbR;EIcQ,kBAAA;EACA,UAAA;EACA,kBAAA;EACA,gBAAA;EFmBd,gBElB6B;EFmB7B,eEnBkC;EFoBlC,iBEpBwC;EAC1B,cJzBT;AC6KP;AGjJY;EACI,kBAAA;EACA,kBAAA;EACA,UAAA;EACA,WAAA;EACA,kBAAA;EACA,gBAAA;EFQd,gBEP6B;EFQ7B,eERkC;EFSlC,iBETwC;EAC1B,cJpCT;EIqCS,UAAA;AHqJhB;AGlJY;EACI,kBAAA;AHoJhB;AG/II;EACI,yBAAA;EACA,WJ1CA;EEoCN,gBEOqB;EFNrB,eEM0B;EFL1B,iBEKgC;EAC1B,iBAAA;AHmJR;AGjJQ;EACI,cJnDJ;EIoDI,kBAAA;EACA,eAAA;AHmJZ;AG/II;EACI,WJtDA;EEoCN,gBEmBqB;EFlBrB,eEkB0B;EFjB1B,iBEiBgC;EAC1B,mBAAA;AHmJR;AGhJI;EACI,cAAA;EACA,eAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,yBJrED;EIsEC,cJvEC;EIwED,yBAAA;EFjCN,gBEkCqB;EFjCrB,eEiC0B;EFhC1B,iBEgCgC;EAC1B,yBAAA;AHoJR;AGlJQ;EACI,yBJ9EJ;ACkOR;AGjJQ;EACI,cJnFC;ACsOb;AG/II;EACI,cAAA;EACA,cAAA;AHiJR;AG9II;EACI,aAAA;EACA,gCAAA;EACA,6BAAA;EACA,aAAA;EAAA,QAAA;EACA,YAAA;EACA,oBAAA;AHgJR;AG9IQ;EACI,eAAA;EACA,sBAAA;EACA,iBAAA;EACA,mBAAA;AHgJZ;AG9IY;EACI,sBJtGR;ACsPR;AG9IgB;EACI,cJ/Gb;AC+PP;AG9IoB;EACI,YAAA;EACA,kBAAA;EACA,MAAA;EACA,cJrHjB;EIsHiB,WAAA;EACA,YAAA;EACA,WAAA;AHgJxB;AG3IY;EACI,yBAAA;EACA,WJzHR;EEoCN,gBEsF6B;EFrF7B,eEqFkC;EFpFlC,iBEoFwC;EF7FxC,aAAA;EACA,mBE6F4B;EF5F5B,2BE4FiC;EF3FjC,mBE2F6C;EAC/B,iBAAA;EACA,kBAAA;AHkJhB;AGhJgB;EACI,YAAA;EACA,kBAAA;EACA,MAAA;EACA,WJnIZ;EIoIY,WAAA;EACA,YAAA;EACA,WAAA;AHkJpB;AChRE;EEsIM;IF1GN,gBE2GyB;IF1GzB,eE0G8B;IFzG9B,iBEyGoC;EH+IpC;EG7IM;IACI,UAAA;IACA,qBAAA;EH+IV;EG7IM;IACI,YAAA;IACA,aAAA;EH+IV;EG7IM;IACI,YAAA;IACA,aAAA;IFvHV,gBEwHyB;IFvHzB,eEuH8B;IFtH9B,iBEsHoC;EHiJpC;AACF;;ACtSE;EE0JK;IFrIL,aAAA;IACA,mBEqIoB;IFpIpB,uBEoIyB;IFnIzB,mBEmIiC;EHmJjC;EGlJM;IFhIN,gBEiIyB;IFhIzB,eEgI8B;IF/H9B,iBE+HoC;EHsJpC;EGpJM;IACI,YAAA;IACA,aAAA;EHsJV;EGpJM;IACA,YAAA;IACA,aAAA;IFzIN,gBE0IqB;IFzIrB,eEyI0B;IFxI1B,iBEwIgC;EHwJhC;AACF;AI7UA;EACI,iBAAA;EACA,oBAAA;EACA,kBAAA;AJ+UJ;AI9UI;EACI,iBAAA;EACA,cAAA;AJgVR;ACxUE;EGVE;IAIQ,SAAA;EJkVV;AACF;AC7UE;EGVE;IAOQ,YAAA;IACA,aAAA;EJoVV;AACF;AIlVI;EHoBF,aAAA;EACA,sBGpBoB;EHqBpB,2BGrB4B;EHsB5B,uBGtBwC;EAClC,SAAA;AJuVR;AItVQ;EHwBN,gBGvByB;EHwBzB,eGxB8B;EHyB9B,iBGzBoC;EAC1B,SAAA;AJ0VZ;AChWE;EGIM;IAII,UAAA;EJ4VV;AACF;ACrWE;EGIM;IAOI,UAAA;IHiBV,gBGhByB;IHiBzB,eGjB8B;IHkB9B,iBGlBoC;EJgWpC;AACF;AC7WE;EGCE;IHoBF,aAAA;IACA,mBGNwB;IHOxB,2BGP6B;IHQ7B,uBGRyC;IAC/B,gBAAA;EJoWV;AACF;ACtXE;EGqBM;IHAN,aAAA;IACA,mBAAA;IACA,8BGD6B;IHE7B,mBGF4C;EJuW5C;AACF;;AK5YA;EACI,yDAAA;AL+YJ","sourcesContent":["body {\r\n    color: $text;\r\n    user-select: none;\r\n    font-family: 'DM Sans', sans-serif;\r\n}\r\n\r\n.container {\r\n    padding: 0 20px 0 20px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.section-title {\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    @include fonts(500, 28px, 32px);\r\n    margin: 0 auto;\r\n    @include breakpoint-mf(\"md\") {\r\n        &--position {\r\n           width: 50%; \r\n        @include breakpoint-mf(\"xl\") {\r\n            margin: 0;\r\n            text-align: left;\r\n        } \r\n        }\r\n    }\r\n    @include breakpoint-mf(\"md\") {\r\n        @include fonts(500, 40px, 44px);\r\n    }\r\n    @include breakpoint-mf(\"xl\") {\r\n        @include fonts(500, 48px, 50px);\r\n    }\r\n    \r\n}","$text: #141414;\r\n$background: #A1C487;\r\n$light: #EAF7E5;\r\n$orange: #FC8A11;\r\n$pink: #FAF3E7;\r\n$gray: #F3F3F3;\r\n$white: #FFF;\r\n\r\n\r\n\r\n","@import \"libs/normalize.css\";\r\n@import \"style/fonts\";\r\n@import \"style/constants\";\r\n@import \"style/mixins\";\r\n@import \"style/style\";\r\n@import \"style/header\";\r\n@import \"style/start\";\r\n@import \"style/section-order-info\";\r\n@import \"style/section-order-steps\";\r\n\r\n\r\n","$grid-breakpoints: (\r\n  xxs: 360px,\r\n  xs: 568px,\r\n  sm: 640px,\r\n  md: 768px,\r\n  ma: 840px,\r\n  my: 1024px,\r\n  lg: 1110px,\r\n  xl: 1200px,\r\n  xxl: 1440px,\r\n  xxxl: 1920px,\r\n);\r\n\r\n@mixin breakpoint-mf($size, $rule: min-width) {\r\n  @media (#{$rule}: map-get($grid-breakpoints, $size)) {\r\n    @content;\r\n  }\r\n}\r\n\r\n@mixin breakpoint-between($min-size, $max-size) {\r\n  $min: map-get($grid-breakpoints, $min-size);\r\n  $max: map-get($grid-breakpoints, $max-size) - 1px;\r\n\r\n  @media (min-width: $min) and (max-width: $max) {\r\n    @content;\r\n  }\r\n}\r\n\r\n@mixin breakpoint-bet($min-size, $max-size) {\r\n  @media (min-width: $min-size) and (max-width: $max-size) {\r\n    @content;\r\n  }\r\n}\r\n\r\n@mixin flex($flex-direction, $justify: flex-start, $align: flex-start) {\r\n  display: flex;\r\n  flex-direction: $flex-direction;\r\n  justify-content: $justify;\r\n  align-items: $align;\r\n}\r\n\r\n@mixin fonts($a, $b, $c) {\r\n  font-weight: $a;\r\n  font-size: $b;\r\n  line-height: $c;\r\n}\r\n\r\n@mixin margin($a, $b) {\r\n  margin-top: $a;\r\n  margin-bottom: $b;\r\n}","@import \"./mixins\";\r\n\r\n.header-wrapper {\r\n    @include flex(row, space-between, center);\r\n    background-color: #FFF;\r\n    padding: 17px 20px;\r\n    height: 50px;\r\n    \r\n}\r\n\r\n.header-nav {\r\n    display: none;\r\n    list-style-type: none;\r\n    &-selected-menu {\r\n        display: block;\r\n        position: absolute;\r\n        top: 175px;\r\n        width: 200px;\r\n        left:50%;\r\n        margin-left: -100px;\r\n        z-index: 10;\r\n\r\n    }\r\n    &-list {\r\n        @include flex(column, center,center);\r\n        gap: 16px;\r\n        &__item-link {\r\n                color: $white;\r\n                @include fonts(400, 14px, 18px);\r\n        }\r\n    }\r\n}\r\n\r\n.logo {\r\n    color: $text;\r\n    text-transform: uppercase;\r\n    display: flex;\r\n    gap: 8px;\r\n    &-text {\r\n        @include fonts(700, 14px, 18px);\r\n        margin: 0;\r\n    }\r\n}\r\n\r\n.header-basket {\r\n    display: none;\r\n}\r\n\r\n@include breakpoint-mf(\"md\") {\r\n    .header-basket {\r\n        display: block;\r\n    }\r\n    .header-menu {\r\n        display: none;\r\n    }\r\n    .header-nav {\r\n        display: flex;\r\n        order: 1;\r\n        &-list {\r\n            flex-direction: row;\r\n            &__item-link {\r\n                color: $text;\r\n            }\r\n        }\r\n       \r\n    }\r\n    .logo {\r\n        order: 2;\r\n        position: absolute;\r\n        top: 17px;\r\n        width: 124px;\r\n        left: 50%;\r\n        margin-left: -62px;\r\n    }\r\n    .header-shopping-cart {\r\n        order: 3;\r\n    }\r\n}\r\n\r\n.selected-menu {\r\n    width: 100vw;\r\n    height: 100vh;\r\n    background-color: $background;\r\n    position: absolute;\r\n    top: 50px;\r\n    left: 0;\r\n    z-index: 5;\r\n    }\r\n",".start {\r\n    background-color: $background;\r\n    padding-top: 48px;\r\n    padding-bottom: 20px;\r\n\r\n    &-user-list {\r\n        @include flex(row, flex-start, center);\r\n\r\n        &__item {\r\n            @include flex(row, center, center);\r\n            border: 3px solid $white;\r\n            border-radius: 50%;\r\n            position: relative;\r\n\r\n            &:last-child::after {\r\n                content: \"2K\";\r\n                position: absolute;\r\n                width: 45px;\r\n                height: 45px;\r\n                background-color: $white;\r\n                border-radius: 50%;\r\n                left: 27px;\r\n                text-align: center;\r\n                padding-top: 5px;\r\n                @include fonts(500, 18px, 24px);\r\n                color: $text;\r\n            }\r\n\r\n            &:last-child::before {\r\n                content: \"reviews\";\r\n                position: absolute;\r\n                left: 32px;\r\n                bottom: 5px;\r\n                text-align: center;\r\n                padding-top: 5px;\r\n                @include fonts(400, 10px, 12px);\r\n                color: $text;\r\n                z-index: 5;\r\n            }\r\n\r\n            &:not(:first-child) {\r\n                margin-left: -15px;\r\n            }\r\n        }\r\n    }\r\n\r\n    &-title {\r\n        text-transform: uppercase;\r\n        color: $white;\r\n        @include fonts(500, 40px, 44px);\r\n        margin: 14px auto;\r\n\r\n        &--italic {\r\n            color: $light;\r\n            font-style: italic;\r\n            cursor: pointer;\r\n        }\r\n    }\r\n\r\n    &-text {\r\n        color: $white;\r\n        @include fonts(400, 14px, 21px);\r\n        margin: 0 auto 20px;\r\n    }\r\n\r\n    &-button {\r\n        display: block;\r\n        cursor: pointer;\r\n        margin-bottom: 8px;\r\n        width: 68px;\r\n        height: 68px;\r\n        border-radius: 50%;\r\n        border: none;\r\n        background-color: $pink;\r\n        color: $orange;\r\n        text-transform: uppercase;\r\n        @include fonts(500, 14px, 16px);\r\n        transform: rotate(-14deg);\r\n\r\n        &:hover {\r\n            background-color: $light;\r\n        }\r\n\r\n        &--text:hover {\r\n            color: $background;\r\n        }\r\n    }\r\n\r\n    &-image {\r\n        display: block;\r\n        margin: 0 auto;\r\n    }\r\n\r\n    &-list-button {\r\n        display: grid;\r\n        grid-template-columns: auto auto;\r\n        grid-template-rows: auto auto;\r\n        gap: 5px;\r\n        width: 200px;\r\n        margin: 8px 0 0 auto;\r\n\r\n        &__item {\r\n            cursor: pointer;\r\n            border: 2px solid $white;\r\n            padding: 8px 14px;\r\n            border-radius: 20px;\r\n\r\n            &:hover {\r\n                background-color: $white;\r\n\r\n                .start-list-button__item-link {\r\n                    color: $text;\r\n\r\n                    &::before {\r\n                        content: \"#\";\r\n                        position: absolute;\r\n                        top: 0;\r\n                        color: $text;\r\n                        width: 15px;\r\n                        height: 25px;\r\n                        left: -10px;\r\n                    }\r\n                }\r\n            }\r\n\r\n            &-link {\r\n                text-transform: uppercase;\r\n                color: $white;\r\n                @include fonts(500, 10px, 15px);\r\n                @include flex(row, flex-start, center);\r\n                margin-left: 15px;\r\n                position: relative;\r\n\r\n                &::before {\r\n                    content: \"#\";\r\n                    position: absolute;\r\n                    top: 0;\r\n                    color: $white;\r\n                    width: 15px;\r\n                    height: 25px;\r\n                    left: -10px;\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    @include breakpoint-mf(\"md\") {\r\n        &-title {\r\n            @include fonts(500, 54px, 64px);\r\n        }\r\n        &-text {\r\n            width: 75%;\r\n            margin: 0 auto 20px 0;\r\n        }\r\n        &-image {\r\n            width: 488px;\r\n            height: 393px;\r\n        }\r\n        &-button {\r\n            width: 114px;\r\n            height: 114px;\r\n            @include fonts(500, 24px, 24px);\r\n        }\r\n    }\r\n}\r\n\r\n@include breakpoint-mf(\"xl\") {\r\n       .start-wrapper {\r\n        @include flex(row, center, center);\r\n        &-title {\r\n            @include fonts(500, 64px, 75px);\r\n        }\r\n        &-image {\r\n            width: 517px;\r\n            height: 429px;\r\n        }\r\n        &-button {\r\n        width: 132px;\r\n        height: 132px;\r\n        @include fonts(500, 28px, 28px);\r\n       }\r\n    }\r\n}",".order-info{\r\n    padding-top: 80px;\r\n    padding-bottom: 80px;\r\n    position: relative;\r\n    &-img {\r\n        margin: 20px auto;\r\n        display: block;\r\n        @include breakpoint-mf(\"md\"){\r\n            margin: 0;\r\n        }\r\n        @include breakpoint-mf(\"xl\"){\r\n            width: 410px;\r\n            height: 170px;\r\n        }\r\n    }\r\n    &-text-wrap {\r\n        @include flex(column, flex-start, flex-start);\r\n        gap: 20px;\r\n        &__item {\r\n            @include fonts(400, 14px, 18px);\r\n            margin: 0;\r\n        @include breakpoint-mf(\"md\"){\r\n            width: 50%;\r\n        }\r\n        @include breakpoint-mf(\"xl\"){\r\n            width: 25%;\r\n            @include fonts(400, 18px, 24px);\r\n        }\r\n        }\r\n        @include breakpoint-mf(\"md\"){\r\n            @include flex(row, flex-start, flex-start);\r\n            margin-top: 40px;\r\n        }\r\n    }\r\n    @include breakpoint-mf(\"md\"){\r\n        &-header-wrap{\r\n            @include flex(row, space-between, center);\r\n        }\r\n    }\r\n}",".order-steps {\r\n    background-image: url(\"../images/svg/bg.js\");\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -9955,7 +10400,7 @@ html {
  */
 
 body {
-  margin: 0;
+  margin: 0 auto;
 }
 
 /**
@@ -9971,10 +10416,10 @@ main {
  * \`article\` contexts in Chrome, Firefox, and Safari.
  */
 
-h1 {
+/* h1 {
   font-size: 2em;
   margin: 0.67em 0;
-}
+} */
 
 /* Grouping content
    ========================================================================== */
@@ -10282,7 +10727,13 @@ template {
 [hidden] {
   display: none;
 }
-`, "",{"version":3,"sources":["webpack://./src/libs/normalize.css"],"names":[],"mappings":"AAAA,2EAA2E;;AAE3E;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,sBAAsB;CACvB;;AAED;EACE,iBAAiB,EAAE,MAAM;EACzB,8BAA8B,EAAE,MAAM;AACxC;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,SAAS;AACX;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;EACE,cAAc;EACd,gBAAgB;AAClB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,uBAAuB,EAAE,MAAM;EAC/B,SAAS,EAAE,MAAM;EACjB,iBAAiB,EAAE,MAAM;AAC3B;;AAEA;;;EAGE;;AAEF;EACE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,6BAA6B;EAC7B,qBAAqB;AACvB;;AAEA;;;EAGE;;AAEF;EACE,mBAAmB,EAAE,MAAM;EAC3B,0BAA0B,EAAE,MAAM;EAClC,iCAAiC,EAAE,MAAM;AAC3C;;AAEA;;EAEE;;AAEF;;EAEE,mBAAmB;AACrB;;AAEA;;;EAGE;;AAEF;;;EAGE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;;;;;EAKE,oBAAoB,EAAE,MAAM;EAC5B,eAAe,EAAE,MAAM;EACvB,iBAAiB,EAAE,MAAM;EACzB,SAAS,EAAE,MAAM;AACnB;;AAEA;;;EAGE;;AAEF;QACQ,MAAM;EACZ,iBAAiB;AACnB;;AAEA;;;EAGE;;AAEF;SACS,MAAM;EACb,oBAAoB;AACtB;;AAEA;;EAEE;;AAEF;;;;EAIE,0BAA0B;AAC5B;;AAEA;;EAEE;;AAEF;;;;EAIE,kBAAkB;EAClB,UAAU;AACZ;;AAEA;;EAEE;;AAEF;;;;EAIE,8BAA8B;AAChC;;AAEA;;EAEE;;AAEF;EACE,8BAA8B;AAChC;;AAEA;;;;;EAKE;;AAEF;EACE,sBAAsB,EAAE,MAAM;EAC9B,cAAc,EAAE,MAAM;EACtB,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,mBAAmB,EAAE,MAAM;AAC7B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,sBAAsB,EAAE,MAAM;EAC9B,UAAU,EAAE,MAAM;AACpB;;AAEA;;EAEE;;AAEF;;EAEE,YAAY;AACd;;AAEA;;;EAGE;;AAEF;EACE,6BAA6B,EAAE,MAAM;EACrC,oBAAoB,EAAE,MAAM;AAC9B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;;EAGE;;AAEF;EACE,0BAA0B,EAAE,MAAM;EAClC,aAAa,EAAE,MAAM;AACvB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,aAAa;AACf;;AAEA;;EAEE;;AAEF;EACE,aAAa;AACf","sourcesContent":["/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n\n/* Document\n   ========================================================================== */\n\n/**\n * 1. Correct the line height in all browsers.\n * 2. Prevent adjustments of font size after orientation changes in iOS.\n */\n\n*, *::before, *::after {\n  box-sizing: border-box;\n }\n\nhtml {\n  line-height: 1.15; /* 1 */\n  -webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/* Sections\n   ========================================================================== */\n\n/**\n * Remove the margin in all browsers.\n */\n\nbody {\n  margin: 0;\n}\n\n/**\n * Render the `main` element consistently in IE.\n */\n\nmain {\n  display: block;\n}\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\n\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\n\n/* Grouping content\n   ========================================================================== */\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\n\nhr {\n  box-sizing: content-box; /* 1 */\n  height: 0; /* 1 */\n  overflow: visible; /* 2 */\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\npre {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/* Text-level semantics\n   ========================================================================== */\n\n/**\n * Remove the gray background on active links in IE 10.\n */\n\na {\n  background-color: transparent;\n  text-decoration: none;\n}\n\n/**\n * 1. Remove the bottom border in Chrome 57-\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\n\nabbr[title] {\n  border-bottom: none; /* 1 */\n  text-decoration: underline; /* 2 */\n  text-decoration: underline dotted; /* 2 */\n}\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\n\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace; /* 1 */\n  font-size: 1em; /* 2 */\n}\n\n/**\n * Add the correct font size in all browsers.\n */\n\nsmall {\n  font-size: 80%;\n}\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/* Embedded content\n   ========================================================================== */\n\n/**\n * Remove the border on images inside links in IE 10.\n */\n\nimg {\n  border-style: none;\n}\n\n/* Forms\n   ========================================================================== */\n\n/**\n * 1. Change the font styles in all browsers.\n * 2. Remove the margin in Firefox and Safari.\n */\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit; /* 1 */\n  font-size: 100%; /* 1 */\n  line-height: 1.15; /* 1 */\n  margin: 0; /* 2 */\n}\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\n\nbutton,\ninput { /* 1 */\n  overflow: visible;\n}\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\n\nbutton,\nselect { /* 1 */\n  text-transform: none;\n}\n\n/**\n * Correct the inability to style clickable types in iOS and Safari.\n */\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\n/**\n * Remove the inner border and padding in Firefox.\n */\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0;\n}\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\n\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText;\n}\n\n/**\n * Correct the padding in Firefox.\n */\n\nfieldset {\n  padding: 0.35em 0.75em 0.625em;\n}\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\n\nlegend {\n  box-sizing: border-box; /* 1 */\n  color: inherit; /* 2 */\n  display: table; /* 1 */\n  max-width: 100%; /* 1 */\n  padding: 0; /* 3 */\n  white-space: normal; /* 1 */\n}\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\n\nprogress {\n  vertical-align: baseline;\n}\n\n/**\n * Remove the default vertical scrollbar in IE 10+.\n */\n\ntextarea {\n  overflow: auto;\n}\n\n/**\n * 1. Add the correct box sizing in IE 10.\n * 2. Remove the padding in IE 10.\n */\n\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box; /* 1 */\n  padding: 0; /* 2 */\n}\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; /* 1 */\n  outline-offset: -2px; /* 2 */\n}\n\n/**\n * Remove the inner padding in Chrome and Safari on macOS.\n */\n\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button; /* 1 */\n  font: inherit; /* 2 */\n}\n\n/* Interactive\n   ========================================================================== */\n\n/*\n * Add the correct display in Edge, IE 10+, and Firefox.\n */\n\ndetails {\n  display: block;\n}\n\n/*\n * Add the correct display in all browsers.\n */\n\nsummary {\n  display: list-item;\n}\n\n/* Misc\n   ========================================================================== */\n\n/**\n * Add the correct display in IE 10+.\n */\n\ntemplate {\n  display: none;\n}\n\n/**\n * Add the correct display in IE 10.\n */\n\n[hidden] {\n  display: none;\n}\n"],"sourceRoot":""}]);
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+`, "",{"version":3,"sources":["webpack://./src/libs/normalize.css"],"names":[],"mappings":"AAAA,2EAA2E;;AAE3E;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,sBAAsB;CACvB;;AAED;EACE,iBAAiB,EAAE,MAAM;EACzB,8BAA8B,EAAE,MAAM;AACxC;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;;GAGG;;AAEH;+EAC+E;;AAE/E;;;EAGE;;AAEF;EACE,uBAAuB,EAAE,MAAM;EAC/B,SAAS,EAAE,MAAM;EACjB,iBAAiB,EAAE,MAAM;AAC3B;;AAEA;;;EAGE;;AAEF;EACE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,6BAA6B;EAC7B,qBAAqB;AACvB;;AAEA;;;EAGE;;AAEF;EACE,mBAAmB,EAAE,MAAM;EAC3B,0BAA0B,EAAE,MAAM;EAClC,iCAAiC,EAAE,MAAM;AAC3C;;AAEA;;EAEE;;AAEF;;EAEE,mBAAmB;AACrB;;AAEA;;;EAGE;;AAEF;;;EAGE,iCAAiC,EAAE,MAAM;EACzC,cAAc,EAAE,MAAM;AACxB;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,wBAAwB;AAC1B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;;EAGE;;AAEF;;;;;EAKE,oBAAoB,EAAE,MAAM;EAC5B,eAAe,EAAE,MAAM;EACvB,iBAAiB,EAAE,MAAM;EACzB,SAAS,EAAE,MAAM;AACnB;;AAEA;;;EAGE;;AAEF;QACQ,MAAM;EACZ,iBAAiB;AACnB;;AAEA;;;EAGE;;AAEF;SACS,MAAM;EACb,oBAAoB;AACtB;;AAEA;;EAEE;;AAEF;;;;EAIE,0BAA0B;AAC5B;;AAEA;;EAEE;;AAEF;;;;EAIE,kBAAkB;EAClB,UAAU;AACZ;;AAEA;;EAEE;;AAEF;;;;EAIE,8BAA8B;AAChC;;AAEA;;EAEE;;AAEF;EACE,8BAA8B;AAChC;;AAEA;;;;;EAKE;;AAEF;EACE,sBAAsB,EAAE,MAAM;EAC9B,cAAc,EAAE,MAAM;EACtB,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,MAAM;EAClB,mBAAmB,EAAE,MAAM;AAC7B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;;EAGE;;AAEF;;EAEE,sBAAsB,EAAE,MAAM;EAC9B,UAAU,EAAE,MAAM;AACpB;;AAEA;;EAEE;;AAEF;;EAEE,YAAY;AACd;;AAEA;;;EAGE;;AAEF;EACE,6BAA6B,EAAE,MAAM;EACrC,oBAAoB,EAAE,MAAM;AAC9B;;AAEA;;EAEE;;AAEF;EACE,wBAAwB;AAC1B;;AAEA;;;EAGE;;AAEF;EACE,0BAA0B,EAAE,MAAM;EAClC,aAAa,EAAE,MAAM;AACvB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,cAAc;AAChB;;AAEA;;EAEE;;AAEF;EACE,kBAAkB;AACpB;;AAEA;+EAC+E;;AAE/E;;EAEE;;AAEF;EACE,aAAa;AACf;;AAEA;;EAEE;;AAEF;EACE,aAAa;AACf;;AAEA;EACE,qBAAqB;EACrB,SAAS;EACT,UAAU;AACZ","sourcesContent":["/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\r\n\r\n/* Document\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Correct the line height in all browsers.\r\n * 2. Prevent adjustments of font size after orientation changes in iOS.\r\n */\r\n\r\n*, *::before, *::after {\r\n  box-sizing: border-box;\r\n }\r\n\r\nhtml {\r\n  line-height: 1.15; /* 1 */\r\n  -webkit-text-size-adjust: 100%; /* 2 */\r\n}\r\n\r\n/* Sections\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the margin in all browsers.\r\n */\r\n\r\nbody {\r\n  margin: 0 auto;\r\n}\r\n\r\n/**\r\n * Render the `main` element consistently in IE.\r\n */\r\n\r\nmain {\r\n  display: block;\r\n}\r\n\r\n/**\r\n * Correct the font size and margin on `h1` elements within `section` and\r\n * `article` contexts in Chrome, Firefox, and Safari.\r\n */\r\n\r\n/* h1 {\r\n  font-size: 2em;\r\n  margin: 0.67em 0;\r\n} */\r\n\r\n/* Grouping content\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\r\n\r\nhr {\r\n  box-sizing: content-box; /* 1 */\r\n  height: 0; /* 1 */\r\n  overflow: visible; /* 2 */\r\n}\r\n\r\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\r\n\r\npre {\r\n  font-family: monospace, monospace; /* 1 */\r\n  font-size: 1em; /* 2 */\r\n}\r\n\r\n/* Text-level semantics\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the gray background on active links in IE 10.\r\n */\r\n\r\na {\r\n  background-color: transparent;\r\n  text-decoration: none;\r\n}\r\n\r\n/**\r\n * 1. Remove the bottom border in Chrome 57-\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\r\n\r\nabbr[title] {\r\n  border-bottom: none; /* 1 */\r\n  text-decoration: underline; /* 2 */\r\n  text-decoration: underline dotted; /* 2 */\r\n}\r\n\r\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\r\n\r\nb,\r\nstrong {\r\n  font-weight: bolder;\r\n}\r\n\r\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\r\n\r\ncode,\r\nkbd,\r\nsamp {\r\n  font-family: monospace, monospace; /* 1 */\r\n  font-size: 1em; /* 2 */\r\n}\r\n\r\n/**\r\n * Add the correct font size in all browsers.\r\n */\r\n\r\nsmall {\r\n  font-size: 80%;\r\n}\r\n\r\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\r\n\r\nsub,\r\nsup {\r\n  font-size: 75%;\r\n  line-height: 0;\r\n  position: relative;\r\n  vertical-align: baseline;\r\n}\r\n\r\nsub {\r\n  bottom: -0.25em;\r\n}\r\n\r\nsup {\r\n  top: -0.5em;\r\n}\r\n\r\n/* Embedded content\r\n   ========================================================================== */\r\n\r\n/**\r\n * Remove the border on images inside links in IE 10.\r\n */\r\n\r\nimg {\r\n  border-style: none;\r\n}\r\n\r\n/* Forms\r\n   ========================================================================== */\r\n\r\n/**\r\n * 1. Change the font styles in all browsers.\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\r\n\r\nbutton,\r\ninput,\r\noptgroup,\r\nselect,\r\ntextarea {\r\n  font-family: inherit; /* 1 */\r\n  font-size: 100%; /* 1 */\r\n  line-height: 1.15; /* 1 */\r\n  margin: 0; /* 2 */\r\n}\r\n\r\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\r\n\r\nbutton,\r\ninput { /* 1 */\r\n  overflow: visible;\r\n}\r\n\r\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\r\n\r\nbutton,\r\nselect { /* 1 */\r\n  text-transform: none;\r\n}\r\n\r\n/**\r\n * Correct the inability to style clickable types in iOS and Safari.\r\n */\r\n\r\nbutton,\r\n[type=\"button\"],\r\n[type=\"reset\"],\r\n[type=\"submit\"] {\r\n  -webkit-appearance: button;\r\n}\r\n\r\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\r\n\r\nbutton::-moz-focus-inner,\r\n[type=\"button\"]::-moz-focus-inner,\r\n[type=\"reset\"]::-moz-focus-inner,\r\n[type=\"submit\"]::-moz-focus-inner {\r\n  border-style: none;\r\n  padding: 0;\r\n}\r\n\r\n/**\r\n * Restore the focus styles unset by the previous rule.\r\n */\r\n\r\nbutton:-moz-focusring,\r\n[type=\"button\"]:-moz-focusring,\r\n[type=\"reset\"]:-moz-focusring,\r\n[type=\"submit\"]:-moz-focusring {\r\n  outline: 1px dotted ButtonText;\r\n}\r\n\r\n/**\r\n * Correct the padding in Firefox.\r\n */\r\n\r\nfieldset {\r\n  padding: 0.35em 0.75em 0.625em;\r\n}\r\n\r\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\r\n\r\nlegend {\r\n  box-sizing: border-box; /* 1 */\r\n  color: inherit; /* 2 */\r\n  display: table; /* 1 */\r\n  max-width: 100%; /* 1 */\r\n  padding: 0; /* 3 */\r\n  white-space: normal; /* 1 */\r\n}\r\n\r\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\r\n\r\nprogress {\r\n  vertical-align: baseline;\r\n}\r\n\r\n/**\r\n * Remove the default vertical scrollbar in IE 10+.\r\n */\r\n\r\ntextarea {\r\n  overflow: auto;\r\n}\r\n\r\n/**\r\n * 1. Add the correct box sizing in IE 10.\r\n * 2. Remove the padding in IE 10.\r\n */\r\n\r\n[type=\"checkbox\"],\r\n[type=\"radio\"] {\r\n  box-sizing: border-box; /* 1 */\r\n  padding: 0; /* 2 */\r\n}\r\n\r\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\r\n\r\n[type=\"number\"]::-webkit-inner-spin-button,\r\n[type=\"number\"]::-webkit-outer-spin-button {\r\n  height: auto;\r\n}\r\n\r\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\r\n\r\n[type=\"search\"] {\r\n  -webkit-appearance: textfield; /* 1 */\r\n  outline-offset: -2px; /* 2 */\r\n}\r\n\r\n/**\r\n * Remove the inner padding in Chrome and Safari on macOS.\r\n */\r\n\r\n[type=\"search\"]::-webkit-search-decoration {\r\n  -webkit-appearance: none;\r\n}\r\n\r\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\r\n\r\n::-webkit-file-upload-button {\r\n  -webkit-appearance: button; /* 1 */\r\n  font: inherit; /* 2 */\r\n}\r\n\r\n/* Interactive\r\n   ========================================================================== */\r\n\r\n/*\r\n * Add the correct display in Edge, IE 10+, and Firefox.\r\n */\r\n\r\ndetails {\r\n  display: block;\r\n}\r\n\r\n/*\r\n * Add the correct display in all browsers.\r\n */\r\n\r\nsummary {\r\n  display: list-item;\r\n}\r\n\r\n/* Misc\r\n   ========================================================================== */\r\n\r\n/**\r\n * Add the correct display in IE 10+.\r\n */\r\n\r\ntemplate {\r\n  display: none;\r\n}\r\n\r\n/**\r\n * Add the correct display in IE 10.\r\n */\r\n\r\n[hidden] {\r\n  display: none;\r\n}\r\n\r\nul {\r\n  list-style-type: none;\r\n  margin: 0;\r\n  padding: 0;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -10384,6 +10835,42 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
+};
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/sourceMaps.js":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/sourceMaps.js ***!
@@ -10426,11 +10913,45 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 
 var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./index.scss */ "./src/index.scss?1fe9"), __webpack_require__.b);
-var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./index.js */ "./src/index.js?06b5"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/user1.png */ "./src/images/photo/user1.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/user2.png */ "./src/images/photo/user2.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/user3.png */ "./src/images/photo/user3.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/girl.png */ "./src/images/photo/girl.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/info1.png */ "./src/images/photo/info1.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_6___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/girl2.png */ "./src/images/photo/girl2.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_7___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/carrot.png */ "./src/images/photo/carrot.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_8___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/brussel.png */ "./src/images/photo/brussel.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_9___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/tomato.png */ "./src/images/photo/tomato.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_10___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/eggplant.png */ "./src/images/photo/eggplant.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_11___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/potatoes.png */ "./src/images/photo/potatoes.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_12___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/leek.png */ "./src/images/photo/leek.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_13___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/mushrooms.png */ "./src/images/photo/mushrooms.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_14___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/corn.png */ "./src/images/photo/corn.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_15___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/radish.png */ "./src/images/photo/radish.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_16___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/girl3.png */ "./src/images/photo/girl3.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_17___ = new URL(/* asset import */ __webpack_require__(/*! ./images/photo/info2.png */ "./src/images/photo/info2.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_18___ = new URL(/* asset import */ __webpack_require__(/*! ./index.js */ "./src/index.js?06b5"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
 var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
-var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\">\r\n    <title>Veggie bust</title>\r\n</head>\r\n<body>\r\n    <header class=\"header\">\r\n       <a href=\"#\" class=\"logo\">\r\n        <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n            <path d=\"M14.5411 0.156924H12.5364C11.9178 0.156924 11.4163 0.648347 11.4163 1.25459V3.21923C11.4163 3.82547 11.9178 4.31692 12.5364 4.31692H14.5411C15.1597 4.31692 15.6612 3.82547 15.6612 3.21923V1.25459C15.6612 0.648347 15.1597 0.156924 14.5411 0.156924Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M3.36519 11.52H1.20624C0.540049 11.52 0 12.0115 0 12.6177V14.5823C0 15.1886 0.540049 15.68 1.20624 15.68H3.36519C4.03138 15.68 4.57143 15.1886 4.57143 14.5823V12.6177C4.57143 12.0115 4.03138 11.52 3.36519 11.52Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M3.1248 5.79091H1.12007C0.501486 5.79091 0 6.28233 0 6.88857V8.85321C0 9.45945 0.501599 9.95091 1.12018 9.95091H3.1248C3.74341 9.95091 4.2449 9.45945 4.2449 8.85321V6.88857C4.2449 6.28233 3.74341 5.79091 3.1248 5.79091Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M8.88295 11.4891H6.87822C6.25964 11.4891 5.75815 11.9805 5.75815 12.5868L5.75804 14.5514C5.75804 15.1576 6.25975 15.6491 6.87833 15.6491H8.88295C9.50157 15.6491 10.0031 15.1576 10.0031 14.5514V12.5868C10.0031 11.9805 9.50157 11.4891 8.88295 11.4891Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M3.1248 0.0431361H1.12007C0.501486 0.0431361 0 0.534559 0 1.1408V3.10544C0 3.71168 0.501599 4.20314 1.12018 4.20314H3.1248C3.74341 4.20314 4.2449 3.71168 4.2449 3.10544V1.1408C4.2449 0.534559 3.74341 0.0431361 3.1248 0.0431361Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M9.03794 5.84874H7.03321C6.41463 5.84874 5.91314 6.34016 5.91314 6.9464V8.91104C5.91314 9.51728 6.41474 10.0087 7.03332 10.0087H9.03794C9.65655 10.0087 10.158 9.51728 10.158 8.91104V6.9464C10.158 6.34016 9.65655 5.84874 9.03794 5.84874Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M14.6667 11.4891H12.6619C12.0434 11.4891 11.5419 11.9805 11.5419 12.5868V14.5514C11.5419 15.1576 12.0435 15.6491 12.662 15.6491H14.6667C15.2853 15.6491 15.7868 15.1576 15.7868 14.5514V12.5868C15.7868 11.9805 15.2853 11.4891 14.6667 11.4891Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M8.7953 0.111854H6.79056C6.17198 0.111854 5.6705 0.603277 5.6705 1.20952V3.17416C5.6705 3.7804 6.1721 4.27185 6.79068 4.27185H8.7953C9.41391 4.27185 9.91539 3.78003 9.91539 3.17379V1.20952C9.91539 0.603277 9.41391 0.111854 8.7953 0.111854Z\" fill=\"#77AC63\"/>\r\n            <path d=\"M14.5219 5.96291H12.5171C11.8985 5.96291 11.3971 6.45433 11.3971 7.06057V9.02521C11.3971 9.63145 11.8987 10.1229 12.5172 10.1229H14.5219C15.1405 10.1229 15.642 9.63145 15.642 9.02521V7.06057C15.642 6.45433 15.1405 5.96291 14.5219 5.96291Z\" fill=\"#77AC63\"/>\r\n            </svg>\r\n            <p>Veggieboost</p>\r\n        </a>\r\n        <nav class=\"header-nav\">\r\n                <ul>\r\n                    <li><a href=\"#\">How It Works</a></li>\r\n                    <li><a href=\"#\">Vegetables</a></li>\r\n                    <li><a href=\"#\">Contacts</a></li>\r\n                </ul>\r\n            </nav>\r\n            <div class=\"header-basket\">\r\n                <a href=\"#\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                <path d=\"M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z\" fill=\"#141414\" stroke=\"#141414\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n                <path d=\"M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z\" fill=\"#141414\" stroke=\"#141414\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n                <path d=\"M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6\" stroke=\"#141414\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\r\n                </svg>\r\n                </a></div>\r\n        \r\n            <!-- <svg width=\"20\" height=\"14\" viewBox=\"0 0 20 14\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n            <path d=\"M0 0.995C0 0.445 0.446 0 0.995 0H9.005C9.26889 7.86455e-09 9.52197 0.10483 9.70857 0.291429C9.89517 0.478027 10 0.731109 10 0.995C10 1.25889 9.89517 1.51197 9.70857 1.69857C9.52197 1.88517 9.26889 1.99 9.005 1.99H0.995C0.731109 1.99 0.478028 1.88517 0.291429 1.69857C0.10483 1.51197 0 1.25889 0 0.995ZM0 7C0 6.45 0.446 6.005 0.995 6.005H19.005C19.2689 6.005 19.522 6.10983 19.7086 6.29643C19.8952 6.48303 20 6.73611 20 7C20 7.26389 19.8952 7.51697 19.7086 7.70357C19.522 7.89017 19.2689 7.995 19.005 7.995H0.995C0.731109 7.995 0.478028 7.89017 0.291429 7.70357C0.10483 7.51697 0 7.26389 0 7ZM0.995 12.01C0.731109 12.01 0.478028 12.1148 0.291429 12.3014C0.10483 12.488 0 12.7411 0 13.005C0 13.2689 0.10483 13.522 0.291429 13.7086C0.478028 13.8952 0.731109 14 0.995 14H13.005C13.2689 14 13.522 13.8952 13.7086 13.7086C13.8952 13.522 14 13.2689 14 13.005C14 12.7411 13.8952 12.488 13.7086 12.3014C13.522 12.1148 13.2689 12.01 13.005 12.01H0.995Z\" fill=\"#77AC63\"/>\r\n            </svg> -->\r\n                        \r\n    </header>\r\n    <main>\r\n        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus nemo dolores ratione facilis facere, asperiores nisi dolor alias dignissimos unde quidem esse, sit eius. Deserunt at facilis fugit minus tenetur.\r\n        Voluptates, quos. </p>\r\n    </main>\r\n\r\n    <" + "script src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\"><" + "/script>\r\n    \r\n</body>\r\n</html>";
+var ___HTML_LOADER_REPLACEMENT_2___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_2___);
+var ___HTML_LOADER_REPLACEMENT_3___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_3___);
+var ___HTML_LOADER_REPLACEMENT_4___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_4___);
+var ___HTML_LOADER_REPLACEMENT_5___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_5___);
+var ___HTML_LOADER_REPLACEMENT_6___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_6___);
+var ___HTML_LOADER_REPLACEMENT_7___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_7___);
+var ___HTML_LOADER_REPLACEMENT_8___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_8___);
+var ___HTML_LOADER_REPLACEMENT_9___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_9___);
+var ___HTML_LOADER_REPLACEMENT_10___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_10___);
+var ___HTML_LOADER_REPLACEMENT_11___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_11___);
+var ___HTML_LOADER_REPLACEMENT_12___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_12___);
+var ___HTML_LOADER_REPLACEMENT_13___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_13___);
+var ___HTML_LOADER_REPLACEMENT_14___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_14___);
+var ___HTML_LOADER_REPLACEMENT_15___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_15___);
+var ___HTML_LOADER_REPLACEMENT_16___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_16___);
+var ___HTML_LOADER_REPLACEMENT_17___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_17___);
+var ___HTML_LOADER_REPLACEMENT_18___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_18___);
+var code = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n    <link\r\n        href=\"https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap\"\r\n        rel=\"stylesheet\">\r\n    <title>Veggie bust</title>\r\n</head>\r\n\r\n<body>\r\n    <header class=\"header\">\r\n        <div class=\"header-wrapper\">\r\n            <a href=\"#\" class=\"logo\">\r\n                <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                    <path\r\n                        d=\"M14.5411 0.156924H12.5364C11.9178 0.156924 11.4163 0.648347 11.4163 1.25459V3.21923C11.4163 3.82547 11.9178 4.31692 12.5364 4.31692H14.5411C15.1597 4.31692 15.6612 3.82547 15.6612 3.21923V1.25459C15.6612 0.648347 15.1597 0.156924 14.5411 0.156924Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M3.36519 11.52H1.20624C0.540049 11.52 0 12.0115 0 12.6177V14.5823C0 15.1886 0.540049 15.68 1.20624 15.68H3.36519C4.03138 15.68 4.57143 15.1886 4.57143 14.5823V12.6177C4.57143 12.0115 4.03138 11.52 3.36519 11.52Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M3.1248 5.79091H1.12007C0.501486 5.79091 0 6.28233 0 6.88857V8.85321C0 9.45945 0.501599 9.95091 1.12018 9.95091H3.1248C3.74341 9.95091 4.2449 9.45945 4.2449 8.85321V6.88857C4.2449 6.28233 3.74341 5.79091 3.1248 5.79091Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M8.88295 11.4891H6.87822C6.25964 11.4891 5.75815 11.9805 5.75815 12.5868L5.75804 14.5514C5.75804 15.1576 6.25975 15.6491 6.87833 15.6491H8.88295C9.50157 15.6491 10.0031 15.1576 10.0031 14.5514V12.5868C10.0031 11.9805 9.50157 11.4891 8.88295 11.4891Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M3.1248 0.0431361H1.12007C0.501486 0.0431361 0 0.534559 0 1.1408V3.10544C0 3.71168 0.501599 4.20314 1.12018 4.20314H3.1248C3.74341 4.20314 4.2449 3.71168 4.2449 3.10544V1.1408C4.2449 0.534559 3.74341 0.0431361 3.1248 0.0431361Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M9.03794 5.84874H7.03321C6.41463 5.84874 5.91314 6.34016 5.91314 6.9464V8.91104C5.91314 9.51728 6.41474 10.0087 7.03332 10.0087H9.03794C9.65655 10.0087 10.158 9.51728 10.158 8.91104V6.9464C10.158 6.34016 9.65655 5.84874 9.03794 5.84874Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M14.6667 11.4891H12.6619C12.0434 11.4891 11.5419 11.9805 11.5419 12.5868V14.5514C11.5419 15.1576 12.0435 15.6491 12.662 15.6491H14.6667C15.2853 15.6491 15.7868 15.1576 15.7868 14.5514V12.5868C15.7868 11.9805 15.2853 11.4891 14.6667 11.4891Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M8.7953 0.111854H6.79056C6.17198 0.111854 5.6705 0.603277 5.6705 1.20952V3.17416C5.6705 3.7804 6.1721 4.27185 6.79068 4.27185H8.7953C9.41391 4.27185 9.91539 3.78003 9.91539 3.17379V1.20952C9.91539 0.603277 9.41391 0.111854 8.7953 0.111854Z\"\r\n                        fill=\"#77AC63\" />\r\n                    <path\r\n                        d=\"M14.5219 5.96291H12.5171C11.8985 5.96291 11.3971 6.45433 11.3971 7.06057V9.02521C11.3971 9.63145 11.8987 10.1229 12.5172 10.1229H14.5219C15.1405 10.1229 15.642 9.63145 15.642 9.02521V7.06057C15.642 6.45433 15.1405 5.96291 14.5219 5.96291Z\"\r\n                        fill=\"#77AC63\" />\r\n                </svg>\r\n                <h1 class=\"logo-text\">Veggieboost</h1>\r\n            </a>\r\n            <nav class=\"header-nav\">\r\n                <ul class=\"header-nav-list\">\r\n                    <li class=\"header-nav-list__item\"><a class=\"header-nav-list__item-link\" href=\"#\">How It Works</a>\r\n                    </li>\r\n                    <li class=\"header-nav-list__item\"><a class=\"header-nav-list__item-link\" href=\"#\">Vegetables</a></li>\r\n                    <li class=\"header-nav-list__item\"><a class=\"header-nav-list__item-link\" href=\"#\">Contacts</a></li>\r\n                    <li class=\"header-nav-list__item\"><a class=\"header-nav-list__item-link\" href=\"#\"><svg width=\"20\"\r\n                                height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                                <g clip-path=\"url(#clip0_251_71)\">\r\n                                    <path\r\n                                        d=\"M7.50008 18.3333C7.96032 18.3333 8.33341 17.9602 8.33341 17.5C8.33341 17.0397 7.96032 16.6666 7.50008 16.6666C7.03984 16.6666 6.66675 17.0397 6.66675 17.5C6.66675 17.9602 7.03984 18.3333 7.50008 18.3333Z\"\r\n                                        fill=\"white\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                        stroke-linejoin=\"round\" />\r\n                                    <path\r\n                                        d=\"M16.6666 18.3333C17.1268 18.3333 17.4999 17.9602 17.4999 17.5C17.4999 17.0397 17.1268 16.6666 16.6666 16.6666C16.2063 16.6666 15.8333 17.0397 15.8333 17.5C15.8333 17.9602 16.2063 18.3333 16.6666 18.3333Z\"\r\n                                        fill=\"white\" stroke=\"white\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                        stroke-linejoin=\"round\" />\r\n                                    <path\r\n                                        d=\"M0.833252 0.833374H4.16659L6.39992 11.9917C6.47612 12.3754 6.68484 12.72 6.98954 12.9653C7.29424 13.2106 7.6755 13.3409 8.06659 13.3334H16.1666C16.5577 13.3409 16.9389 13.2106 17.2436 12.9653C17.5483 12.72 17.757 12.3754 17.8333 11.9917L19.1666 5.00004H4.99992\"\r\n                                        stroke=\"white\" stroke-width=\"1.6\" stroke-linecap=\"round\"\r\n                                        stroke-linejoin=\"round\" />\r\n                                </g>\r\n                                <defs>\r\n                                    <clipPath id=\"clip0_251_71\">\r\n                                        <rect width=\"20\" height=\"20\" fill=\"white\" />\r\n                                    </clipPath>\r\n                                </defs>\r\n                            </svg></a></li>\r\n                </ul>\r\n            </nav>\r\n            <div class=\"header-shopping-cart\">\r\n                <a class=\"header-basket\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\"\r\n                        xmlns=\"http://www.w3.org/2000/svg\">\r\n                        <g clip-path=\"url(#clip0_251_67)\">\r\n                            <path\r\n                                d=\"M7.49996 18.3333C7.9602 18.3333 8.33329 17.9602 8.33329 17.5C8.33329 17.0397 7.9602 16.6666 7.49996 16.6666C7.03972 16.6666 6.66663 17.0397 6.66663 17.5C6.66663 17.9602 7.03972 18.3333 7.49996 18.3333Z\"\r\n                                fill=\"#141414\" stroke=\"#141414\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                stroke-linejoin=\"round\" />\r\n                            <path\r\n                                d=\"M16.6667 18.3333C17.1269 18.3333 17.5 17.9602 17.5 17.5C17.5 17.0397 17.1269 16.6666 16.6667 16.6666C16.2065 16.6666 15.8334 17.0397 15.8334 17.5C15.8334 17.9602 16.2065 18.3333 16.6667 18.3333Z\"\r\n                                fill=\"#141414\" stroke=\"#141414\" stroke-width=\"2\" stroke-linecap=\"round\"\r\n                                stroke-linejoin=\"round\" />\r\n                            <path\r\n                                d=\"M0.833374 0.833374H4.16671L6.40004 11.9917C6.47625 12.3754 6.68496 12.72 6.98966 12.9653C7.29436 13.2106 7.67562 13.3409 8.06671 13.3334H16.1667C16.5578 13.3409 16.9391 13.2106 17.2438 12.9653C17.5485 12.72 17.7572 12.3754 17.8334 11.9917L19.1667 5.00004H5.00004\"\r\n                                stroke=\"#141414\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" />\r\n                        </g>\r\n                        <defs>\r\n                            <clipPath id=\"clip0_251_67\">\r\n                                <rect width=\"20\" height=\"20\" fill=\"white\" />\r\n                            </clipPath>\r\n                        </defs>\r\n                    </svg>\r\n                </a>\r\n                <a href=\"#\" class=\"header-menu\"><svg width=\"20\" height=\"14\" viewBox=\"0 0 20 14\" fill=\"none\"\r\n                        xmlns=\"http://www.w3.org/2000/svg\">\r\n                        <path\r\n                            d=\"M0 0.995C0 0.445 0.446 0 0.995 0H9.005C9.26889 7.86455e-09 9.52197 0.10483 9.70857 0.291429C9.89517 0.478027 10 0.731109 10 0.995C10 1.25889 9.89517 1.51197 9.70857 1.69857C9.52197 1.88517 9.26889 1.99 9.005 1.99H0.995C0.731109 1.99 0.478028 1.88517 0.291429 1.69857C0.10483 1.51197 0 1.25889 0 0.995ZM0 7C0 6.45 0.446 6.005 0.995 6.005H19.005C19.2689 6.005 19.522 6.10983 19.7086 6.29643C19.8952 6.48303 20 6.73611 20 7C20 7.26389 19.8952 7.51697 19.7086 7.70357C19.522 7.89017 19.2689 7.995 19.005 7.995H0.995C0.731109 7.995 0.478028 7.89017 0.291429 7.70357C0.10483 7.51697 0 7.26389 0 7ZM0.995 12.01C0.731109 12.01 0.478028 12.1148 0.291429 12.3014C0.10483 12.488 0 12.7411 0 13.005C0 13.2689 0.10483 13.522 0.291429 13.7086C0.478028 13.8952 0.731109 14 0.995 14H13.005C13.2689 14 13.522 13.8952 13.7086 13.7086C13.8952 13.522 14 13.2689 14 13.005C14 12.7411 13.8952 12.488 13.7086 12.3014C13.522 12.1148 13.2689 12.01 13.005 12.01H0.995Z\"\r\n                            fill=\"#77AC63\" />\r\n                    </svg>\r\n                </a>\r\n            </div>\r\n        </div>\r\n    </header>\r\n    <main class=\"main\">\r\n        <section class=\"start\">\r\n            <div class=\"container\">\r\n                <div class=\"start-wrapper\">\r\n                    <div>\r\n                        <ul class=\"start-user-list\">\r\n                            <li class=\"start-user-list__item\"><img class=\"start-user-list__item-photo\"\r\n                                    src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"user1\"></li>\r\n                            <li class=\"start-user-list__item\"><img class=\"start-user-list__item-photo\"\r\n                                    src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"user2\"></li>\r\n                            <li class=\"start-user-list__item\"><img class=\"start-user-list__item-photo\"\r\n                                    src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\" alt=\"user3\"></li>\r\n                        </ul>\r\n                        <h2 class=\"start-title\">Organic <span class=\"start-title--italic\">vegetables</span> to your diet\r\n                            today!</h2>\r\n                        <p class=\"start-text\">Our expertly curated vegetable baskets are made with the freshest, highest\r\n                            quality vegetables available. Fresh Harvest Box has got you covered. Fresh, high-quality\r\n                            vegetables in expertly curated vegetable baskets delivered to you.</p>\r\n                        <button class=\"start-button\"><span class=\"start-button--text\">shop now</span></button>\r\n                    </div>\r\n                    <div><img class=\"start-image\" src=\"" + ___HTML_LOADER_REPLACEMENT_4___ + "\" alt=\"girl\" width=\"303\" height=\"236\">\r\n                        <ul class=\"start-list-button\">\r\n                            <li class=\"start-list-button__item\"><a class=\"start-list-button__item-link\"\r\n                                    href=\"#\">Organic</a></li>\r\n                            <li class=\"start-list-button__item\"><a class=\"start-list-button__item-link\"\r\n                                    href=\"#\">Products</a></li>\r\n                            <li class=\"start-list-button__item\"><a class=\"start-list-button__item-link\"\r\n                                    href=\"#\">Basket</a></li>\r\n                            <li class=\"start-list-button__item\"><a class=\"start-list-button__item-link\"\r\n                                    href=\"#\">Vegetables</a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </section>\r\n        <section class=\"order-info\">\r\n            <div class=\"container\">\r\n                <div class=\"order-info-header-wrap\">\r\n                  <h3 class=\"section-title section-title--position\">To order your vegetable basket, simply follow these easy steps</h3>\r\n                <img class=\"order-info-img\" src=\"" + ___HTML_LOADER_REPLACEMENT_5___ + "\" alt=\"vegetables\">  \r\n                </div>\r\n                <div class=\"order-info-text-wrap\">\r\n                    <p class=\"order-info-text-wrap__item\">Our baskets are assembled with care and delivered straight to your doorstep, so you can enjoy the\r\n                    taste of fresh fruit without ever leaving your home. </p>\r\n                <p class=\"order-info-text-wrap__item\">Whether you're looking for a healthy snack or a thoughtful gift, our fruit baskets are the perfect\r\n                    choice.</p>\r\n                </div>\r\n                \r\n            </div>\r\n        </section>\r\n        <section class=\"order-steps\">\r\n            <div class=\"container\">\r\n                <h3 class=\"section-title\">3 Easy Steps for Buying Fresh Vegetables</h3>\r\n                <ol>\r\n                    <li>Just choose the vegetable you want to order by clicking on the checkboxes next to it.</li>\r\n                    <li>Click on the basket and fill out the form.</li>\r\n                    <li>Sit back and relax! Your fresh vegetables basket will be delivered.</li>\r\n                </ol>\r\n                <img src=\"" + ___HTML_LOADER_REPLACEMENT_6___ + "\" alt=\"little_girl\">\r\n                <p>Discount up to 40%! Taste the vitamins and keep your health</p>\r\n                <p>Discount up to 40%! Taste the vitamins and keep your health</p>\r\n            </div>\r\n        </section>\r\n        <section>\r\n            <div class=\"container\">\r\n                <h3 class=\"section-title\">Organic vegetables</h3>\r\n                <p>Our organic vegetables are hand-picked from local farms and delivered straight to your doorstep,\r\n                    ensuring that you get the freshest and most nutritious produce possible.</p>\r\n                <ul>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Carrot</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_7___ + "\" alt=\"carrot\" width=\"292\" height=\"223\">\r\n                            <p>100 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Brussel sprouts</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_8___ + "\" alt=\"brussel\" width=\"230\" height=\"230\">\r\n                            <p>80 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Tomato</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_9___ + "\" alt=\"tomato\" width=\"278\" height=\"176\">\r\n                            <p>40 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Eggplant</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_10___ + "\" alt=\"eggplant\" width=\"194\" height=\"193\">\r\n                            <p>60 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Sweet potatoes</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_11___ + "\" alt=\"potatoes\" width=\"265\" height=\"203\">\r\n                            <p>80 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Leek</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_12___ + "\" alt=\"leek\" width=\"265\" height=\"203\">\r\n                            <p>50 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Mushrooms</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_13___ + "\" alt=\"mushrooms\" width=\"325\" height=\"183\">\r\n                            <p>40 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Corn</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_14___ + "\" alt=\"corn\" width=\"265\" height=\"203\">\r\n                            <p>60 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                    <li>\r\n                        <a href=\"#\">\r\n                            <p>Radish</p>\r\n                            <img src=\"" + ___HTML_LOADER_REPLACEMENT_15___ + "\" alt=\"corn\" width=\"316\" height=\"181\">\r\n                            <p>90 UAH / kg</p>\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n                <button type=\"button\">Order</button>\r\n            </div>\r\n        </section>\r\n        <section class=\"shipping\">\r\n            <div class=\"container\">\r\n                <div class=\"shipping-wrap\">\r\n                    <svg class=\"shipping-wrap-img\" width=\"295\" height=\"318\" viewBox=\"0 0 544 318\" fill=\"none\"\r\n                        xmlns=\"http://www.w3.org/2000/svg\">\r\n                        <path d=\"M18.4682 158.587H82.8525V208.294H18.4682V158.587Z\" fill=\"#141414\" />\r\n                        <path d=\"M7.37045 158.587H66.2659V208.294H7.37045V158.587Z\" fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M7.20914 208.491H66.5051V158.387H7.20914V208.491ZM66.0646 208.094H7.56987V158.784H66.0646V208.094Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M27.5631 158.587V170.985L31.2489 168.958L34.0936 170.865L37.4991 168.958L40.6243 170.985V158.587H27.5631Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M40.6251 182.981H54.207V183.776H40.6251V182.981Z\" fill=\"#141414\" />\r\n                        <path d=\"M40.6251 188.226H54.207V189.021H40.6251V188.226Z\" fill=\"#141414\" />\r\n                        <path d=\"M40.6251 193.474H54.207V194.269H40.6251V193.474Z\" fill=\"#141414\" />\r\n                        <path d=\"M14.6625 181.907H36.6581V195.536H14.6625V181.907Z\" fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M14.4624 195.697H36.8586V181.67H14.4624V195.697ZM36.458 195.299H14.8631V182.068H36.458V195.299Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M81.0916 217.394H63.9036C63.1023 217.394 62.3011 217.751 61.8203 218.387L53.1261 229.235C51.7239 230.983 52.966 233.526 55.2096 233.526H81.0916V217.394Z\"\r\n                            fill=\"#F27B79\" />\r\n                        <path\r\n                            d=\"M55.2094 233.723H81.2916V217.193H63.9033C63.0219 217.193 62.1807 217.59 61.6598 218.265L52.9657 229.113C52.2846 229.987 52.1244 231.14 52.6452 232.133C53.086 233.087 54.0875 233.723 55.2094 233.723ZM80.891 233.325H55.2094C54.2478 233.325 53.4064 232.809 52.9657 231.934C52.565 231.06 52.6452 230.067 53.2462 229.352L61.9402 218.504C62.4209 217.908 63.1022 217.59 63.8634 217.59H80.8509V233.325H80.891Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M256.215 149.211C256.215 150.682 255.014 151.834 253.571 151.834H244.917C243.435 151.834 242.273 150.642 242.273 149.211C242.273 147.741 243.475 146.589 244.917 146.589H253.571C255.014 146.549 256.215 147.741 256.215 149.211Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M223.562 152.307H234.219V167.288H223.562V152.307Z\" fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M251.006 263.403V175.83C251.006 168.4 244.916 162.36 237.424 162.36H198.16C190.668 162.36 184.578 168.4 184.578 175.83V256.489C184.578 263.324 179.009 268.847 172.118 268.847H161.1C154.209 268.847 148.64 263.324 148.64 256.489V221.246C148.64 221.246 148.921 210.597 155.531 209.047H87.6615C87.6615 209.047 59.4558 231.855 53.5262 268.608V272.661H251.006V263.403Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M53.3259 272.861H251.206V175.831C251.206 168.282 245.036 162.163 237.424 162.163H198.16C190.548 162.163 184.378 168.282 184.378 175.831V256.491C184.378 263.206 178.889 268.649 172.118 268.649H161.1C154.329 268.649 148.841 263.206 148.841 256.491V221.247C148.841 221.128 149.161 210.757 155.612 209.248L157.294 208.85H87.6215L87.5814 208.89C87.5013 208.93 80.4098 214.731 72.7173 224.903C65.5858 234.319 56.4511 249.537 53.4061 268.57L53.3259 272.861ZM250.806 272.464H53.7266V268.61C56.7715 249.696 65.8662 234.518 72.9577 225.181C80.2896 215.486 87.0605 209.804 87.7416 209.248H154.33C148.76 211.671 148.48 220.81 148.44 221.247V256.491C148.44 263.405 154.129 269.047 161.1 269.047H172.118C179.09 269.047 184.779 263.405 184.779 256.491V175.831C184.779 168.52 190.789 162.56 198.16 162.56H237.424C244.796 162.56 250.806 168.52 250.806 175.831V272.464Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M224.243 162.319H229.051V250.369H224.243V162.319Z\" fill=\"#141414\" />\r\n                        <path d=\"M0.0001297 206.902H91.6687V211.431H0.0001297V206.902Z\" fill=\"#141414\" />\r\n                        <path d=\"M103.007 272.903H166.71V285.897H103.007V272.903Z\" fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M80.0499 311.486C64.0298 311.486 51.043 296.845 51.043 278.785C51.043 260.725 64.0298 246.084 80.0499 246.084C96.0701 246.084 109.057 260.725 109.057 278.785C109.057 296.845 96.0701 311.486 80.0499 311.486Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M75.1615 298.606C64.7396 298.606 56.2909 289.071 56.2909 277.309C56.2909 265.547 64.7396 256.012 75.1615 256.012C85.5834 256.012 94.0321 265.547 94.0321 277.309C94.0321 289.071 85.5834 298.606 75.1615 298.606Z\"\r\n                            fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M75.1617 298.809C85.6988 298.809 94.2327 289.154 94.2327 277.313C94.2327 265.473 85.6587 255.817 75.1617 255.817C64.6648 255.817 56.0908 265.473 56.0908 277.313C56.0908 289.154 64.6247 298.809 75.1617 298.809ZM75.1617 256.215C85.4584 256.215 93.832 265.671 93.832 277.313C93.832 288.955 85.4584 298.412 75.1617 298.412C64.8651 298.412 56.4915 288.955 56.4915 277.313C56.4915 265.671 64.8651 256.215 75.1617 256.215Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M85.1381 277.429C85.1381 282.157 82.8944 286.369 75.7228 286.369C71.516 286.369 69.9535 282.157 69.9535 277.429C69.9535 272.7 71.5561 268.846 75.7228 268.846C82.8944 268.846 85.1381 272.661 85.1381 277.429Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M75.2422 286.011C71.038 286.011 67.6298 282.168 67.6298 277.428C67.6298 272.688 71.038 268.845 75.2422 268.845C79.4463 268.845 82.8545 272.688 82.8545 277.428C82.8545 282.168 79.4463 286.011 75.2422 286.011Z\"\r\n                            fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M75.2425 286.17C79.5295 286.17 83.0552 282.237 83.0552 277.389C83.0552 272.541 79.5695 268.607 75.2425 268.607C70.9155 268.607 67.4299 272.541 67.4299 277.389C67.4299 282.237 70.9556 286.17 75.2425 286.17ZM75.2425 269.045C79.3291 269.045 82.6545 272.819 82.6545 277.429C82.6545 282.038 79.3291 285.813 75.2425 285.813C71.1559 285.813 67.8305 282.038 67.8305 277.429C67.8305 272.819 71.1559 269.045 75.2425 269.045Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M243.475 311.486C227.455 311.486 214.468 296.845 214.468 278.785C214.468 260.725 227.455 246.084 243.475 246.084C259.495 246.084 272.482 260.725 272.482 278.785C272.482 296.845 259.495 311.486 243.475 311.486Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M238.586 298.606C228.164 298.606 219.715 289.071 219.715 277.309C219.715 265.547 228.164 256.012 238.586 256.012C249.008 256.012 257.456 265.547 257.456 277.309C257.456 289.071 249.008 298.606 238.586 298.606Z\"\r\n                            fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M238.586 298.809C249.123 298.809 257.657 289.154 257.657 277.313C257.657 265.473 249.083 255.817 238.586 255.817C228.089 255.817 219.516 265.473 219.516 277.313C219.516 289.154 228.049 298.809 238.586 298.809ZM238.586 256.215C248.883 256.215 257.257 265.671 257.257 277.313C257.257 288.955 248.883 298.412 238.586 298.412C228.29 298.412 219.916 288.955 219.916 277.313C219.916 265.671 228.29 256.215 238.586 256.215Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M248.562 277.429C248.562 282.157 246.319 286.012 239.147 286.012C234.94 286.012 233.378 282.157 233.378 277.429C233.378 272.7 234.981 268.846 239.147 268.846C246.319 268.846 248.562 272.661 248.562 277.429Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M238.666 286.011C234.462 286.011 231.054 282.169 231.054 277.429C231.054 272.688 234.462 268.846 238.666 268.846C242.87 268.846 246.278 272.688 246.278 277.429C246.278 282.169 242.87 286.011 238.666 286.011Z\"\r\n                            fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M238.666 286.171C242.953 286.171 246.479 282.237 246.479 277.389C246.479 272.541 242.993 268.608 238.666 268.608C234.339 268.608 230.853 272.541 230.853 277.389C230.853 282.237 234.379 286.171 238.666 286.171ZM238.666 269.045C242.752 269.045 246.078 272.82 246.078 277.429C246.078 282.038 242.752 285.813 238.666 285.813C234.579 285.813 231.254 282.038 231.254 277.429C231.254 272.82 234.619 269.045 238.666 269.045Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M26.7242 268.73H30.4103C30.891 264.956 34.1361 262.055 38.0625 262.055H119.955V277.393H38.0625C34.3365 277.393 31.2114 274.77 30.4903 271.274H26.7242V268.73Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M41.2673 272.662C41.2673 272.662 36.1791 232.213 83.8162 221.206C101.004 217.233 140.468 214.65 131.614 272.662H41.2673Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M41.0663 272.862H131.733L131.773 272.703C135.059 251.127 131.973 235.79 122.598 227.208C111.14 216.678 93.3109 218.824 83.7354 221.049C72.8377 223.552 63.8231 227.843 56.8919 233.764C51.363 238.492 47.1563 244.293 44.4319 251.008C39.7844 262.412 40.9863 272.584 41.0264 272.703L41.0663 272.862ZM131.413 272.464H41.427C41.3068 271.074 40.5456 261.617 44.8326 251.127C49.0794 240.717 59.2959 227.088 83.8156 221.407C93.311 219.221 110.98 217.076 122.318 227.486C131.613 235.989 134.658 251.127 131.413 272.464Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M151.044 211.433H91.3072C85.0972 211.433 80.049 206.427 80.049 200.268C80.049 193.752 85.658 188.626 92.1885 189.143L151.725 193.831C156.332 194.189 159.898 198.003 159.898 202.612C159.898 207.46 155.932 211.433 151.044 211.433Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M212.264 268.174H280.535C280.535 268.174 279.413 258.201 272.642 249.141C257.818 229.473 227.008 232.175 216.11 254.187C214.147 258.081 212.785 262.69 212.264 268.174Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M212.023 268.368H280.735L280.695 268.129C280.695 268.01 279.493 257.997 272.762 249.018C265.75 239.68 254.532 234.753 242.753 235.826C231.054 236.899 221.038 243.733 215.87 254.103C213.826 258.275 212.504 262.964 212.023 268.129V268.368ZM280.294 267.971H212.504C212.985 262.964 214.267 258.355 216.27 254.302C221.358 244.051 231.254 237.296 242.833 236.263C254.452 235.19 265.55 240.077 272.481 249.296C278.571 257.441 280.053 266.461 280.294 267.971Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M40.7862 275.284H216.391V270.039H280.454V265.271H216.271C213.666 265.271 211.583 267.377 211.583 269.92V270.516H40.7862V275.284Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M163.986 300.991H175.725V296.223H165.629L143.032 279.137L140.147 282.912L163.986 300.991Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M223.201 157.276H237.825C238.706 157.276 239.588 157.157 240.389 156.958C245.037 155.806 248.482 151.634 248.482 146.667C248.482 143.727 247.28 141.105 245.357 139.197C243.995 137.846 242.312 136.893 240.389 136.416C239.548 136.217 238.706 136.098 237.785 136.098H235.662C228.33 136.098 221.318 139.714 217.512 145.952C217.312 146.27 217.112 146.628 216.911 146.985C214.467 151.674 217.873 157.276 223.201 157.276Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M223.202 157.474H237.825C238.707 157.474 239.588 157.355 240.47 157.156C245.317 155.964 248.723 151.673 248.723 146.666C248.723 143.766 247.601 141.064 245.518 139.037C244.115 137.647 242.353 136.653 240.47 136.177C239.588 135.978 238.707 135.859 237.825 135.859H235.702C228.17 135.859 221.158 139.673 217.392 145.832C217.192 146.189 216.991 146.507 216.791 146.865C215.589 149.09 215.629 151.752 216.951 153.937C218.314 156.163 220.637 157.474 223.202 157.474ZM237.825 136.296C238.667 136.296 239.548 136.415 240.349 136.614C242.192 137.051 243.875 138.004 245.237 139.355C247.2 141.302 248.322 143.925 248.322 146.706C248.322 151.514 245.037 155.646 240.389 156.798C239.548 156.997 238.707 157.116 237.865 157.116H223.242C220.798 157.116 218.594 155.884 217.352 153.779C216.11 151.712 216.03 149.209 217.192 147.103C217.392 146.746 217.592 146.428 217.793 146.07C221.479 140.031 228.37 136.296 235.742 136.296H237.825Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M233.058 146.707C233.058 150.919 234.901 154.693 237.825 157.316H237.865C243.755 157.316 248.563 152.587 248.563 146.707C248.563 143.767 247.361 141.144 245.438 139.237C243.515 137.33 240.83 136.138 237.906 136.138H237.865C234.861 138.72 233.058 142.495 233.058 146.707Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M235.981 146.705C235.981 150.758 237.664 154.374 240.389 156.996C245.036 155.844 248.482 151.672 248.482 146.705C248.482 143.764 247.28 141.142 245.357 139.235C243.995 137.884 242.312 136.93 240.389 136.453C237.664 138.996 235.981 142.652 235.981 146.705Z\"\r\n                            fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M240.352 157.197L240.472 157.157C245.32 155.965 248.725 151.674 248.725 146.667C248.725 143.767 247.604 141.065 245.52 139.038C244.118 137.648 242.355 136.654 240.472 136.177L240.352 136.138L240.272 136.217C237.387 138.959 235.784 142.654 235.784 146.627C235.784 150.601 237.387 154.296 240.272 157.038L240.352 157.197ZM240.472 136.654C242.275 137.131 243.917 138.045 245.24 139.356C247.203 141.303 248.325 143.925 248.325 146.707C248.325 151.475 245.119 155.567 240.472 156.759C237.707 154.097 236.185 150.521 236.185 146.707C236.185 142.853 237.707 139.316 240.472 136.654Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M208.819 147.621H216.712V150.84H208.819V147.621Z\" fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M208.658 151.078H216.951V147.462H208.658V151.078ZM216.511 150.681H209.018V147.86H216.511V150.681Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M219.675 146.549H216.51C215.028 146.549 213.866 147.741 213.866 149.172C213.866 150.642 215.068 151.794 216.51 151.794H219.675C221.158 151.794 222.32 150.602 222.32 149.172C222.32 147.741 221.158 146.549 219.675 146.549Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M210.34 149.211C210.34 150.682 209.138 151.834 207.696 151.834H199.042C197.56 151.834 196.398 150.642 196.398 149.211C196.398 147.741 197.6 146.589 199.042 146.589H207.696C209.138 146.549 210.34 147.741 210.34 149.211Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M67.3486 262.49H106.452V264.715H67.3486V262.49Z\" fill=\"white\" />\r\n                        <path\r\n                            d=\"M67.1486 264.917H106.653V262.294H67.1486V264.917ZM106.252 264.519H67.5492V262.692H106.252V264.519Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M67.3486 256.612H106.452V258.837H67.3486V256.612Z\" fill=\"white\" />\r\n                        <path\r\n                            d=\"M67.1486 259.032H106.653V256.41H67.1486V259.032ZM106.252 258.635H67.5492V256.807H106.252V258.635Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M67.3486 250.767H106.452V252.992H67.3486V250.767Z\" fill=\"white\" />\r\n                        <path\r\n                            d=\"M67.1486 253.196H106.653V250.573H67.1486V253.196ZM106.252 252.799H67.5492V250.971H106.252V252.799Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M126.885 300.951H209.018V301.747H126.885V300.951Z\" fill=\"#141414\" />\r\n                        <path d=\"M286.87 317.385H544V318.001H286.87V317.385Z\" fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M345.45 317.3H376.778C376.778 317.3 374.801 310.609 360.92 305.111L360.963 303.577L361.092 295.266H346.266L346.008 302.596L345.45 317.3Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M345.192 317.516H377.036L376.95 317.26C376.864 317.005 374.801 310.441 361.093 304.986L361.222 295.098H345.966L345.192 317.516ZM376.477 317.09H345.665L346.438 295.482H360.835L360.706 305.242L360.835 305.284C372.868 310.1 375.919 315.811 376.477 317.09Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M304.625 317.3H335.953C335.953 317.3 333.976 310.608 320.096 305.111L320.225 304.088L321.428 295.266H306.602L305.914 302.937L304.625 317.3Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M304.368 317.515H336.255L336.169 317.26C336.083 317.004 334.02 310.441 320.311 304.985L321.643 295.055H306.388L304.368 317.515ZM335.653 317.089H304.84L306.774 295.481H321.171L319.838 305.241L320.01 305.284C332.086 310.1 335.094 315.811 335.653 317.089Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M489.672 317.3H521L518.981 301.744L518.164 295.266H503.338L505.1 303.235L505.53 306.815C490.961 311.248 489.672 317.3 489.672 317.3Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M489.415 317.515H521.259L518.379 295.055H503.081L504.928 303.281L505.315 306.648C490.962 311.037 489.501 317.004 489.458 317.26L489.415 317.515ZM520.786 317.089H489.974C490.446 315.896 493.068 310.824 505.616 307.031L505.788 306.988L505.358 303.238L503.639 295.524H517.993L520.786 317.089Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M453.574 317.3H484.902L484.128 301.999L483.784 295.266H468.958L469.345 303.448L469.431 306.347C455.55 311.887 453.574 317.3 453.574 317.3Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M453.272 317.515H485.159L483.999 295.055H468.743L469.173 303.494L469.259 306.264C455.55 311.719 453.487 317.047 453.401 317.26L453.272 317.515ZM484.686 317.089H453.917C454.561 315.896 457.742 311.25 469.517 306.562L469.645 306.52L469.56 303.451L469.173 295.481H483.569L484.686 317.089Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M370.074 11.9777L348.286 7.11914L345.923 15.3446C345.321 14.9184 344.72 14.6627 344.161 14.6627C341.582 14.6627 341.067 17.7313 341.067 17.7313C340.336 21.0555 342.528 23.1013 343.516 24.5503L336.039 48.2891L354.561 51.1445L356.151 35.9722C372.094 43.9419 370.074 11.9777 370.074 11.9777Z\"\r\n                            fill=\"#FFAC71\" />\r\n                        <path\r\n                            d=\"M354.776 51.315L356.366 36.2279C359.503 37.7196 362.211 37.8048 364.359 36.3984C371.493 31.7103 370.376 12.7448 370.333 11.9351V11.7646L348.158 6.8208L345.838 14.9184C345.279 14.5348 344.72 14.3644 344.205 14.3644C341.497 14.3644 340.895 17.5608 340.895 17.6034C340.251 20.5015 341.755 22.4194 342.829 23.8258C343.001 24.0389 343.173 24.252 343.302 24.4651L335.782 48.3317L354.776 51.315ZM355.979 35.5886L354.39 50.8462L336.34 48.0334L343.775 24.4651L343.732 24.3798C343.56 24.1667 343.388 23.911 343.173 23.6553C342.142 22.2915 340.724 20.4589 341.325 17.7739C341.368 17.646 341.841 14.8758 344.205 14.8758C344.72 14.8758 345.279 15.0889 345.838 15.5151L346.095 15.6855L348.502 7.37484L369.946 12.1482C370.032 14.0234 370.763 31.7529 364.145 36.0574C362.082 37.4212 359.418 37.2934 356.323 35.7591L355.979 35.5886Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M376.606 2.68767C375.618 2.47456 373.125 2.68766 371.621 3.92366C371.707 3.75318 371.793 3.5827 371.879 3.41222C374.114 -3.2366 364.703 1.70739 359.718 2.68767C358.686 2.90077 356.408 3.19912 356.408 3.19912C341.496 -0.167914 343.001 14.9198 343.001 14.9198C346.911 14.3657 348.071 19.6507 348.071 19.6507C352.068 17.7754 353.314 15.0903 353.443 13.9395C357.311 15.687 367.238 19.0114 375.446 13.1297C381.076 9.08077 379.099 3.15649 376.606 2.68767Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M463.156 65.8937C463.156 65.8937 469.216 54.6849 469.732 49.1019L467.196 36.8276C467.196 36.8276 466.895 25.0648 482.495 27.9202C482.495 27.9202 482.409 22.3798 486.105 21.0586C486.105 21.0586 484.3 24.1698 484.944 27.2383C484.944 27.2383 487.953 20.4193 493.625 23.9993C493.625 23.9993 498.009 26.386 496.848 30.7331C496.848 30.7331 496.934 35.6769 490.101 35.7621C490.101 35.7621 490.187 41.9419 505.271 50.3378C505.271 50.3378 517.82 56.3045 516.788 69.3032C515.757 82.302 504.068 90.4848 504.068 90.4848L461.094 90.5275L463.156 65.8937Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M487.007 70.6669L485.159 49.2295C485.159 49.2295 488.382 47.3543 487.566 43.6891C487.566 43.6891 486.792 40.7484 483.827 43.0072L483.741 37.8076C483.741 37.8076 473.341 41.686 467.282 35.8472C467.282 35.8472 462.899 56.1338 472.138 56.0912L470.161 73.1388L487.007 70.6669Z\"\r\n                            fill=\"#FFAC71\" />\r\n                        <path\r\n                            d=\"M469.947 73.3948L487.265 70.8803L485.417 49.3578C486.019 48.9742 488.554 47.0564 487.824 43.6468C487.824 43.6042 487.48 42.3683 486.449 42.0273C485.761 41.8142 484.988 41.9847 484.085 42.5814L483.999 37.5097L483.698 37.595C483.612 37.6376 473.384 41.3454 467.454 35.6771L467.196 35.4214L467.11 35.805C466.981 36.359 464.188 49.5709 468.228 54.472C469.173 55.6228 470.419 56.2194 471.923 56.2621L469.947 73.3948ZM486.792 70.4968L470.462 72.8834L472.439 55.8785H472.181C470.677 55.8785 469.474 55.3244 468.571 54.2163C465.047 49.9118 467.067 38.4899 467.497 36.2738C473.041 41.2176 481.893 38.6604 483.612 38.1064L483.698 43.4338L484.042 43.178C484.945 42.4961 485.718 42.2404 486.32 42.4535C487.136 42.7092 487.437 43.7747 487.437 43.7747C488.211 47.2694 485.245 49.0168 485.116 49.1021L484.988 49.1873V49.3152L486.792 70.4968Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M345.966 302.639L360.921 303.576L361.05 295.265H346.224L345.966 302.639Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M305.914 302.937L320.224 304.088L321.427 295.265H306.601L305.914 302.937Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M327.272 123.767L327.874 127.006L331.527 146.995L340.981 198.393L341.54 215.355L344.419 300.338H369.43L372.224 198.905L368.27 142.349L366.938 123.767H327.272Z\"\r\n                            fill=\"#CDCBCC\" />\r\n                        <path\r\n                            d=\"M344.204 300.552H369.645V300.339L372.438 198.906L367.152 123.555H327.014L340.766 198.437L344.204 300.552ZM369.215 300.126H344.591L341.153 198.394L327.487 123.982H366.679L372.008 198.948L369.215 300.126Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M503.337 295.265L505.142 303.235L519.023 301.744L518.163 295.265H503.337Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M468.957 295.265L469.344 303.491L484.127 301.999L483.783 295.265H468.957Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M301.832 300.767H327.101L341.54 215.358L344.764 196.222L350.264 146.869L352.456 127.009H311.416L311.588 142.693L312.189 194.432L301.832 300.767Z\"\r\n                            fill=\"#CDCBCC\" />\r\n                        <path\r\n                            d=\"M301.617 300.977H327.316L327.359 300.806L345.021 196.262L352.756 126.793H311.243L312.017 194.429L301.617 300.977ZM326.929 300.55H302.09L312.404 194.472L311.63 127.219H352.241L344.548 196.177L326.929 300.55Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M457.011 185.905L463.628 300.337H486.491L485.717 227.8L485.245 186.417L488.554 148.059L489.843 132.759L470.676 132.461L459.847 132.248L458.944 149.423L457.011 185.905Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M463.457 300.554H486.706V300.341L485.46 186.42L490.101 132.55L459.675 132.038L456.796 185.909L463.457 300.554ZM486.276 300.128H463.844L457.226 185.909L460.062 132.465L489.628 132.976L485.03 186.42L486.276 300.128Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M311.415 127.01L311.587 142.694C318.721 145.038 325.425 146.402 331.527 146.998C338.532 147.723 344.849 147.51 350.264 146.828C358.386 145.848 364.574 143.802 368.227 142.31L366.938 123.729H327.273L327.874 126.968H311.415V127.01Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M470.419 130.672L470.677 132.462L473.126 150.149L479.615 196.774L485.717 227.801L499.813 299.656L520.741 300.083L511.115 194.515L508.451 139.367L507.978 129.649L470.419 130.672Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M521 300.297V300.042L511.374 194.474L508.194 129.395L470.205 130.418L479.401 196.818L499.642 299.871L521 300.297ZM507.764 129.864L510.901 194.517L520.528 299.828L499.986 299.402L479.831 196.69L470.678 130.844L507.764 129.864Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M461.653 68.9587L444.979 90.4813L421.687 94.999V111.62L448.976 109.063C450.866 108.893 452.628 108.211 454.176 107.145L465.091 99.4739L461.653 68.9587Z\"\r\n                            fill=\"#CDCBCC\" />\r\n                        <path\r\n                            d=\"M421.472 111.877L449.018 109.278C450.909 109.107 452.757 108.425 454.347 107.317L465.391 99.5604L461.868 68.406L444.893 90.2695L421.515 94.8297V111.877H421.472ZM464.919 99.39L454.089 107.019C452.585 108.084 450.823 108.724 448.975 108.894L421.901 111.451V95.2133L445.108 90.6957L445.151 90.6531L461.524 69.5567L464.919 99.39Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M355.634 45.6928C355.634 45.6928 352.411 53.2363 337.929 38.3623L313.09 47.4401C309.566 48.9744 307.074 52.1708 306.429 55.9213L302.518 77.8274H316.098L309.824 136.386C309.824 136.386 328.131 141.202 342.141 141.5C365.261 142.012 370.375 137.92 370.375 137.92L369.343 117.122L369.171 69.8151C369.429 63.0813 366.593 58.0096 362.553 52.5544L355.634 45.6928Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M346.009 141.756C365.648 141.756 370.29 138.218 370.461 138.091L370.547 138.005L369.516 117.079L369.344 69.7723C369.602 63.1664 366.852 58.0095 362.683 52.3838L355.549 45.309L355.42 45.6074C355.377 45.65 354.776 46.9712 352.971 47.3121C350.607 47.7383 346.138 46.5024 338.059 38.1917L337.973 38.1064L337.844 38.1491L313.005 47.2269C309.395 48.8038 306.86 52.0428 306.215 55.8785L302.261 78.0404H315.841L309.567 136.556L309.739 136.599C309.911 136.641 328.218 141.415 342.098 141.756C343.431 141.756 344.763 141.756 346.009 141.756ZM370.117 137.792C369.344 138.304 363.285 141.756 342.098 141.287C329.034 140.989 311.974 136.684 310.04 136.215L316.314 77.5716H302.777L306.645 55.9212C307.289 52.2133 309.696 49.1021 313.177 47.6105L337.887 38.6179C346.052 46.9712 350.693 48.2071 353.1 47.7383C354.647 47.44 355.42 46.5024 355.721 46.0336L362.425 52.6395C366.637 58.3505 369.215 63.2516 368.957 69.7723L369.129 117.079L370.117 137.792Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M370.461 67.6819H439.005V120.615H370.461V67.6819Z\" fill=\"#141414\" />\r\n                        <path d=\"M358.643 67.6814H421.342V120.614H358.643V67.6814Z\" fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M358.428 120.826H421.558V67.4666H358.428V120.826ZM421.128 120.399H358.858V67.8927H421.128V120.399Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M380.13 67.6816V80.8941L384.041 78.763L387.049 80.7662L390.659 78.763L394.011 80.8941V67.6816H380.13Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M393.968 93.6802H408.45V94.533H393.968V93.6802Z\" fill=\"#141414\" />\r\n                        <path d=\"M393.968 99.2637H408.45V100.117H393.968V99.2637Z\" fill=\"#141414\" />\r\n                        <path d=\"M393.968 104.844H408.45V105.697H393.968V104.844Z\" fill=\"#141414\" />\r\n                        <path d=\"M366.378 92.5288H389.799V107.02H366.378V92.5288Z\" fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M366.164 107.23H390.015V92.313H366.164V107.23ZM389.585 106.804H366.594V92.7392H389.585V106.804Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M458.946 149.425C462.555 149.936 467.497 150.363 473.127 150.149C477.854 149.979 483.097 149.382 488.512 148.061C495.087 146.441 501.92 143.714 508.409 139.366L507.936 129.649L470.42 130.672L470.677 132.462L459.848 132.291L458.946 149.425Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M421.471 122.361C421.858 123.001 422.374 123.512 422.975 123.938C423.577 124.364 424.265 124.663 424.995 124.791L428.39 125.558C430.582 126.027 432.816 126.282 435.051 126.282H438.016C438.876 126.282 439.735 126.069 440.466 125.643L443.646 123.896L446.998 123.512L459.461 122.02V112.516L448.975 114.135L444.119 114.903L433.59 112.004C433.59 112.004 431.742 115.798 437.501 117.716L431.914 120.443H422.546C421.557 120.358 420.913 121.509 421.471 122.361Z\"\r\n                            fill=\"#E78D4C\" />\r\n                        <path\r\n                            d=\"M435.095 126.457H438.06C438.962 126.457 439.865 126.244 440.638 125.775L443.775 124.07L459.719 122.152V112.222L444.162 114.651L433.504 111.71L433.419 111.881C433.376 111.923 432.731 113.287 433.419 114.822C433.934 116.058 435.137 117.038 436.985 117.72L431.914 120.192H422.589C422.03 120.192 421.515 120.49 421.257 120.959C420.999 121.428 420.999 122.024 421.3 122.493C421.729 123.133 422.245 123.687 422.847 124.113C423.491 124.539 424.179 124.837 424.91 125.008L428.305 125.775C430.582 126.244 432.817 126.457 435.095 126.457ZM459.289 121.811L443.603 123.687L440.423 125.434C439.693 125.818 438.876 126.031 438.06 126.031H435.095C432.86 126.031 430.625 125.775 428.477 125.306L425.082 124.539C424.394 124.369 423.749 124.113 423.148 123.687C422.589 123.303 422.073 122.792 421.686 122.195C421.472 121.854 421.472 121.428 421.644 121.087C421.816 120.746 422.202 120.533 422.589 120.533H432L438.103 117.549L437.587 117.379C435.61 116.739 434.321 115.759 433.805 114.566C433.333 113.5 433.59 112.52 433.762 112.136L444.162 114.992L459.289 112.648V121.811Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M379.357 35.1199H421.859V67.9365H379.357V35.1199Z\" fill=\"#141414\" />\r\n                        <path d=\"M372.052 35.1189H410.901V67.9355H372.052V35.1189Z\" fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M371.836 68.153H411.115V34.9102H371.836V68.153ZM410.685 67.7268H372.266V35.3363H410.685V67.7268Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M385.331 35.1187V43.3018L387.781 41.9806L389.672 43.2166L391.906 41.9806L393.969 43.3018V35.1187H385.331Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M393.925 51.0645H402.906V51.9173H393.925V51.0645Z\" fill=\"#141414\" />\r\n                        <path d=\"M393.925 54.5103H402.906V55.3631H393.925V54.5103Z\" fill=\"#141414\" />\r\n                        <path d=\"M393.925 58.0066H402.906V58.8595H393.925V58.0066Z\" fill=\"#141414\" />\r\n                        <path d=\"M376.822 50.5078H391.348V59.5008H376.822V50.5078Z\" fill=\"#FEFEFE\" />\r\n                        <path\r\n                            d=\"M376.606 59.7099H391.561V50.2908H376.606V59.7099ZM391.131 59.2837H377.036V50.717H391.131V59.2837Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M447.042 123.472L459.505 121.98V112.475L449.019 114.095L447.042 123.472Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M450.822 113.157L458.687 111.666L459.976 73.3939C460.062 70.9646 461.179 68.6632 463.07 67.0863L471.106 60.4377C471.106 60.4377 472.653 70.1975 487.651 60.4377L501.532 65.3815C505.443 66.788 508.408 70.0696 509.353 74.0758L518.12 116.311C518.936 120.232 516.014 123.94 511.975 124.068L507.806 124.196L509.826 137.663C509.826 137.663 495.515 143.758 480.818 144.653C463.886 145.718 458.343 141.712 458.558 141.158L459.417 126.838L450.822 127.179V113.157Z\"\r\n                            fill=\"#CDCBCC\" />\r\n                        <path\r\n                            d=\"M475.319 145.12C476.995 145.12 478.843 145.077 480.82 144.95C495.388 144.055 509.741 138.003 509.913 137.917L510.085 137.832L510.042 137.662L508.065 124.45L512.019 124.322C513.996 124.237 515.844 123.342 517.09 121.765C518.336 120.231 518.809 118.227 518.379 116.31L509.612 74.0741C508.624 69.9401 505.659 66.6584 501.619 65.2094L487.652 60.223L487.567 60.2656C481.765 64.0587 477.167 65.3799 474.245 64.1013C471.795 63.0358 471.365 60.4361 471.365 60.4361L471.322 60.0525L463.028 66.9568C461.094 68.5763 459.934 70.9203 459.848 73.4349L458.559 111.536L450.695 113.028V127.518L459.289 127.177L458.43 141.242C458.387 141.37 458.43 141.455 458.516 141.583C459.032 142.392 463.544 145.12 475.319 145.12ZM509.569 137.576C507.979 138.216 494.485 143.628 480.777 144.481C464.575 145.504 459.032 141.838 458.774 141.242V141.199L459.633 126.623L450.996 126.964V113.284L458.86 111.792L460.149 73.3496C460.235 70.9629 461.352 68.7468 463.157 67.2125L470.893 60.777C471.107 61.5868 471.838 63.5046 473.944 64.3996C477.038 65.7634 481.593 64.4849 487.61 60.6065L501.404 65.5077C505.272 66.8715 508.151 70.068 509.097 74.0741L517.863 116.31C518.25 118.1 517.777 119.975 516.66 121.424C515.5 122.873 513.781 123.725 511.933 123.811L507.507 123.938L509.569 137.576Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M507.77 123.953L507.795 124.381L459.054 127.157L459.029 126.729L507.77 123.953Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M458.515 111.874L495.602 104.288L492.25 85.9617L491.82 86.0469L495.129 103.947L458.429 111.49L458.515 111.874Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M300.499 104.76C300.112 109.065 302.82 113.071 306.988 114.35L350.908 127.903L355.076 129.352C356.666 129.906 358.385 130.076 360.061 129.863L368.484 128.84C369 128.755 369.559 128.627 370.031 128.457L379.872 124.877C381.119 124.408 382.236 123.555 382.967 122.447L383.096 122.234C383.611 121.467 383.053 120.444 382.107 120.444H366.293C370.891 117.546 370.547 114.989 370.547 114.989L360.835 116.31L353.744 117.163L320.267 100.967L324.135 81.8315L324.908 77.9531H302.648L302.433 80.2119L300.499 104.76Z\"\r\n                            fill=\"#FFAC71\" />\r\n                        <path\r\n                            d=\"M358.729 130.161C359.202 130.161 359.675 130.119 360.105 130.076L368.528 129.053C369.086 128.968 369.645 128.84 370.118 128.669L379.959 125.089C381.291 124.621 382.365 123.768 383.139 122.575L383.268 122.362C383.569 121.936 383.569 121.382 383.311 120.955C383.053 120.487 382.623 120.231 382.065 120.231H366.981C371.02 117.461 370.762 115.074 370.719 114.946L370.676 114.733L360.749 116.054L353.702 116.864L320.44 100.797L325.124 77.6545H302.433L300.113 104.718C299.726 109.15 302.476 113.199 306.774 114.52L350.693 128.073L354.862 129.522C356.194 129.948 357.483 130.161 358.729 130.161ZM382.193 120.657C382.537 120.657 382.881 120.828 383.053 121.169C383.225 121.467 383.225 121.85 383.01 122.149L382.881 122.362C382.15 123.427 381.119 124.237 379.916 124.706L370.075 128.286C369.602 128.456 369.086 128.584 368.571 128.669L360.148 129.692C358.515 129.905 356.796 129.735 355.249 129.181L351.08 127.732L307.16 114.179C303.078 112.9 300.456 109.065 300.8 104.803L303.078 78.1234H324.866L320.225 101.052L320.354 101.138L353.873 117.333L361.05 116.48L370.504 115.202C370.462 115.841 369.989 117.929 366.336 120.231L365.734 120.614H382.193V120.657Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M326.962 68.7159L327.38 68.8154L325.004 78.638L324.586 78.5385L326.962 68.7159Z\"\r\n                            fill=\"#141414\" />\r\n                        <path d=\"M302.606 80.1268L324.222 81.789L325.038 77.8679H302.778L302.606 80.1268Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M418.394 192.109C417.265 192.109 416.146 192.329 415.102 192.757C414.059 193.186 413.11 193.814 412.311 194.606C411.512 195.398 410.879 196.338 410.446 197.373C410.013 198.409 409.791 199.518 409.79 200.638C409.79 198.375 408.884 196.205 407.271 194.605C405.658 193.005 403.47 192.106 401.189 192.106C403.47 192.106 405.658 191.207 407.271 189.607C408.884 188.007 409.79 185.837 409.79 183.574C409.79 185.837 410.696 188.007 412.309 189.607C413.922 191.207 416.11 192.106 418.391 192.106L418.394 192.109Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M441.178 246.025C443.116 246.025 444.687 244.467 444.687 242.545C444.687 240.622 443.116 239.064 441.178 239.064C439.24 239.064 437.669 240.622 437.669 242.545C437.669 244.467 439.24 246.025 441.178 246.025Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M297.201 206.367C299.139 206.367 300.71 204.809 300.71 202.887C300.71 200.964 299.139 199.406 297.201 199.406C295.264 199.406 293.693 200.964 293.693 202.887C293.693 204.809 295.264 206.367 297.201 206.367Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M417.088 149.605C419.564 149.605 421.572 147.614 421.572 145.158C421.572 142.702 419.564 140.71 417.088 140.71C414.612 140.71 412.605 142.702 412.605 145.158C412.605 147.614 414.612 149.605 417.088 149.605Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M171.48 242.325C169.61 242.325 167.816 243.062 166.493 244.374C165.171 245.686 164.428 247.465 164.428 249.321C164.428 247.465 163.685 245.686 162.362 244.374C161.04 243.062 159.246 242.325 157.375 242.325C159.246 242.325 161.04 241.587 162.362 240.275C163.685 238.963 164.428 237.184 164.428 235.328C164.428 237.184 165.171 238.963 166.493 240.275C167.816 241.587 169.61 242.325 171.48 242.325Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M212.719 237.733C214.011 237.733 215.059 236.694 215.059 235.412C215.059 234.129 214.011 233.09 212.719 233.09C211.426 233.09 210.379 234.129 210.379 235.412C210.379 236.694 211.426 237.733 212.719 237.733Z\"\r\n                            fill=\"#A1C487\" />\r\n                        <path\r\n                            d=\"M278.954 120.94C277.825 120.94 276.706 121.16 275.663 121.589C274.619 122.017 273.671 122.645 272.872 123.437C272.073 124.229 271.439 125.17 271.006 126.205C270.574 127.24 270.351 128.349 270.351 129.47C270.351 127.207 269.444 125.037 267.831 123.436C266.218 121.836 264.031 120.937 261.75 120.937C264.031 120.937 266.218 120.038 267.831 118.438C269.444 116.838 270.351 114.668 270.351 112.405C270.351 114.668 271.257 116.838 272.87 118.438C274.483 120.038 276.67 120.937 278.952 120.937L278.954 120.94Z\"\r\n                            fill=\"#141414\" />\r\n                        <path\r\n                            d=\"M267.047 67.0584L267.054 67.0584L267.062 67.0582C268.17 67.0236 269.274 67.2102 270.308 67.6069C271.342 68.0036 272.285 68.6023 273.08 69.3672C273.876 70.132 274.509 71.0474 274.94 72.059C275.372 73.0705 275.595 74.1576 275.595 75.2558C275.595 76.3541 275.372 77.4412 274.94 78.4527C274.509 79.4643 273.876 80.3797 273.08 81.1445C272.285 81.9094 271.342 82.5081 270.308 82.9048C269.274 83.3015 268.17 83.4881 267.062 83.4535L267.054 83.4533H267.046L231.3 83.4532L231.297 83.4533C230.267 83.4593 229.251 83.2213 228.334 82.7592C227.416 82.2972 226.623 81.6245 226.021 80.7976C225.419 79.9708 225.025 79.0135 224.871 78.0056C224.718 76.9976 224.809 75.9679 225.138 75.0019C225.467 74.036 226.024 73.1615 226.762 72.4515L226.416 72.091L226.762 72.4515C227.501 71.7415 228.401 71.2166 229.386 70.9207C230.371 70.6248 231.414 70.5667 232.426 70.7512C233.439 70.9357 234.392 71.3574 235.207 71.9809L236.184 72.7291L236.005 71.5112C235.471 67.8766 236.401 64.1792 238.592 61.2176C240.785 58.2559 244.064 56.2676 247.723 55.6836C251.382 55.0997 255.126 55.9672 258.145 58.0981C261.163 60.2289 263.215 63.4514 263.857 67.0687L263.957 67.6325L264.503 67.4573C265.324 67.1933 266.183 67.0587 267.047 67.0584Z\"\r\n                            fill=\"white\" stroke=\"#141414\" />\r\n                        <path\r\n                            d=\"M274.967 317.11C276.26 317.11 277.308 316.07 277.308 314.788C277.308 313.506 276.26 312.467 274.967 312.467C273.675 312.467 272.627 313.506 272.627 314.788C272.627 316.07 273.675 317.11 274.967 317.11Z\"\r\n                            fill=\"#A1C487\" />\r\n                    </svg>\r\n                    <p class=\"shipping-wrap-text\">The best shipping for you! <span>Your products</span> always arrive in\r\n                        the <span>best</span> conditions!</p>\r\n                </div>\r\n            </div>\r\n\r\n        </section>\r\n        <section class=\"recall\">\r\n            <div class=\"container\">\r\n                <h3 class=\"section-title\">Fresh Harvest Box has got you covered</h3>\r\n                <p>Our boxes are packed with delicious, nutritious vegetables, perfect for anyone looking to eat healthier or support local farmers. Order your box today and start enjoying the best that nature has to offer!</p>\r\n                <input type=\"number\">\r\n                <button type=\"button\">Recall</button>\r\n                <div class=\"\"><img src=\"" + ___HTML_LOADER_REPLACEMENT_16___ + "\" alt=\"girl\"></div>\r\n            </div>\r\n        </section>\r\n    </main>\r\n    <footer>\r\n        <div class=\"container\">\r\n<img src=\"" + ___HTML_LOADER_REPLACEMENT_17___ + "\" alt=\"vegetables\" width=\"335\" height=\"172\">\r\n<a href=\"#\">\r\n    <svg width=\"17\" height=\"16\" viewBox=\"0 0 17 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M15.0411 0.156924H13.0364C12.4178 0.156924 11.9163 0.648347 11.9163 1.25459V3.21923C11.9163 3.82547 12.4178 4.31692 13.0364 4.31692H15.0411C15.6597 4.31692 16.1612 3.82547 16.1612 3.21923V1.25459C16.1612 0.648347 15.6597 0.156924 15.0411 0.156924Z\" fill=\"#141414\"/>\r\n    <path d=\"M3.86519 11.52H1.70624C1.04005 11.52 0.5 12.0115 0.5 12.6177V14.5823C0.5 15.1886 1.04005 15.68 1.70624 15.68H3.86519C4.53138 15.68 5.07143 15.1886 5.07143 14.5823V12.6177C5.07143 12.0115 4.53138 11.52 3.86519 11.52Z\" fill=\"#141414\"/>\r\n    <path d=\"M3.6248 5.79091H1.62007C1.00149 5.79091 0.5 6.28233 0.5 6.88857V8.85321C0.5 9.45945 1.0016 9.95091 1.62018 9.95091H3.6248C4.24341 9.95091 4.7449 9.45945 4.7449 8.85321V6.88857C4.7449 6.28233 4.24341 5.79091 3.6248 5.79091Z\" fill=\"#141414\"/>\r\n    <path d=\"M9.38295 11.4891H7.37822C6.75964 11.4891 6.25815 11.9805 6.25815 12.5868L6.25804 14.5514C6.25804 15.1576 6.75975 15.6491 7.37833 15.6491H9.38295C10.0016 15.6491 10.5031 15.1576 10.5031 14.5514V12.5868C10.5031 11.9805 10.0016 11.4891 9.38295 11.4891Z\" fill=\"#141414\"/>\r\n    <path d=\"M3.6248 0.0431361H1.62007C1.00149 0.0431361 0.5 0.534559 0.5 1.1408V3.10544C0.5 3.71168 1.0016 4.20314 1.62018 4.20314H3.6248C4.24341 4.20314 4.7449 3.71168 4.7449 3.10544V1.1408C4.7449 0.534559 4.24341 0.0431361 3.6248 0.0431361Z\" fill=\"#141414\"/>\r\n    <path d=\"M9.53794 5.84874H7.53321C6.91463 5.84874 6.41314 6.34016 6.41314 6.9464V8.91104C6.41314 9.51728 6.91474 10.0087 7.53332 10.0087H9.53794C10.1566 10.0087 10.658 9.51728 10.658 8.91104V6.9464C10.658 6.34016 10.1566 5.84874 9.53794 5.84874Z\" fill=\"#141414\"/>\r\n    <path d=\"M15.1667 11.4891H13.1619C12.5434 11.4891 12.0419 11.9805 12.0419 12.5868V14.5514C12.0419 15.1576 12.5435 15.6491 13.162 15.6491H15.1667C15.7853 15.6491 16.2868 15.1576 16.2868 14.5514V12.5868C16.2868 11.9805 15.7853 11.4891 15.1667 11.4891Z\" fill=\"#141414\"/>\r\n    <path d=\"M9.2953 0.111854H7.29056C6.67198 0.111854 6.1705 0.603277 6.1705 1.20952V3.17416C6.1705 3.7804 6.6721 4.27185 7.29068 4.27185H9.2953C9.91391 4.27185 10.4154 3.78003 10.4154 3.17379V1.20952C10.4154 0.603277 9.91391 0.111854 9.2953 0.111854Z\" fill=\"#141414\"/>\r\n    <path d=\"M15.0219 5.96291H13.0171C12.3985 5.96291 11.8971 6.45433 11.8971 7.06057V9.02521C11.8971 9.63145 12.3987 10.1229 13.0172 10.1229H15.0219C15.6405 10.1229 16.142 9.63145 16.142 9.02521V7.06057C16.142 6.45433 15.6405 5.96291 15.0219 5.96291Z\" fill=\"#141414\"/>\r\n    </svg>\r\n    <h2>Veggieboost</h2>\r\n    </a>\r\n    <nav>\r\n        <ul>\r\n            <li>How It Works</li>\r\n            <li>Vegetables</li>\r\n            <li>Contacts</li>\r\n        </ul>\r\n    </nav>\r\n        <ul>\r\n            <li>\r\n                <a href=\"#\">\r\n                <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                <g opacity=\"0.8\">\r\n                <path d=\"M14.6399 3.47992C14.8199 3.47992 15 3.47992 15.36 3.47992V6.17992C15.18 6.17992 14.82 6.17992 14.46 6.17992C14.1 6.17992 13.74 6.17992 13.56 6.35992C13.38 6.53992 13.3799 6.71992 13.3799 7.13992C13.3799 7.49992 13.3799 7.73992 13.3799 8.09992H15.36V10.3799H13.3799V20.2799H10.32V10.3199H8.69995V8.03992H10.32V7.25992C10.32 5.93992 10.5 4.97992 10.86 4.55992C11.4 3.77992 12.48 3.41992 14.1 3.41992C14.28 3.47992 14.4599 3.47992 14.6399 3.47992Z\" fill=\"#141414\"/>\r\n                </g>\r\n                </svg>\r\n            </a> \r\n                </li>\r\n            <li><a href=\"#\">\r\n                <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                <g opacity=\"0.8\">\r\n                <path d=\"M21.5381 8.06687C21.5263 7.26111 21.3771 6.46173 21.0913 5.70812C20.5913 4.42124 19.5731 3.40365 18.284 2.9055C17.5388 2.62556 16.7509 2.47548 15.9533 2.45845C14.9277 2.41268 14.6025 2.3999 11.9988 2.3999C9.39519 2.3999 9.06148 2.3999 8.04326 2.45845C7.24682 2.47548 6.4589 2.62556 5.71363 2.9055C4.4246 3.40365 3.40532 4.42124 2.90634 5.70812C2.62594 6.45215 2.47454 7.23875 2.45961 8.03388C2.41376 9.05891 2.3999 9.38356 2.3999 11.9829C2.3999 14.5822 2.3999 14.9143 2.45961 15.9319C2.4756 16.7281 2.62594 17.5136 2.90634 18.2598C3.40639 19.5456 4.4246 20.5632 5.7147 21.0613C6.45677 21.3508 7.24468 21.5148 8.04433 21.5403C9.07107 21.5861 9.39626 21.5999 11.9999 21.5999C14.6035 21.5999 14.9373 21.5999 15.9555 21.5403C16.7519 21.5243 17.5398 21.3742 18.2862 21.0943C19.5752 20.5951 20.5934 19.5775 21.0935 18.2917C21.3739 17.5466 21.5242 16.7611 21.5402 15.9638C21.586 14.9398 21.5999 14.6152 21.5999 12.0148C21.5978 9.41549 21.5978 9.08552 21.5381 8.06687ZM11.9924 16.8984C9.26938 16.8984 7.06343 14.6961 7.06343 11.9776C7.06343 9.25902 9.26938 7.05674 11.9924 7.05674C14.7134 7.05674 16.9214 9.25902 16.9214 11.9776C16.9214 14.6961 14.7134 16.8984 11.9924 16.8984ZM17.1176 8.02217C16.4811 8.02217 15.9683 7.50912 15.9683 6.87472C15.9683 6.24033 16.4811 5.72728 17.1176 5.72728C17.752 5.72728 18.2659 6.24033 18.2659 6.87472C18.2659 7.50912 17.752 8.02217 17.1176 8.02217Z\" fill=\"#141414\"/>\r\n                <path d=\"M11.994 14.9821C13.6525 14.9821 14.997 13.6376 14.997 11.9791C14.997 10.3206 13.6525 8.97607 11.994 8.97607C10.3355 8.97607 8.99097 10.3206 8.99097 11.9791C8.99097 13.6376 10.3355 14.9821 11.994 14.9821Z\" fill=\"#141414\"/>\r\n                </g>\r\n                </svg>\r\n                </a></li>\r\n            <li><a href=\"#\">\r\n                <svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n                <g opacity=\"0.8\">\r\n                <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M18.1801 4.49988C17.1601 4.43988 15.0601 4.37988 11.8801 4.37988H11.4601C8.40012 4.37988 6.36015 4.43988 5.34015 4.55988C3.96015 4.67988 3.00012 5.03988 2.46012 5.51988C1.98012 5.93988 1.62013 6.71988 1.50013 7.73988C1.44013 8.39988 1.38013 9.77988 1.38013 11.8799V12.1799C1.38013 14.1599 1.44012 15.5399 1.56012 16.1999C1.74012 17.1599 2.04015 17.8799 2.64015 18.2999C3.24015 18.7799 4.26013 19.0799 5.70013 19.1999C6.72013 19.2599 8.82013 19.3199 12.0001 19.3199H12.4201C15.4801 19.3199 17.5201 19.2599 18.5401 19.1399C19.9201 19.0199 20.8801 18.6599 21.4201 18.1799C21.9001 17.7599 22.2601 16.9799 22.3801 15.9599C22.4401 15.2999 22.5001 13.9199 22.5001 11.8199V11.5199C22.5001 9.53988 22.4401 8.15988 22.3201 7.49988C22.1401 6.53988 21.8401 5.81988 21.2401 5.39988C20.6401 4.91988 19.6201 4.61988 18.1801 4.49988ZM15.8401 11.8799L9.24015 15.8399V7.91988L15.8401 11.8799Z\" fill=\"#141414\"/>\r\n                </g>\r\n                </svg>\r\n                </a></li>\r\n        </ul>\r\n    \r\n    <p>+380 (68) 443-94-26</p>\r\n    <p>1678 S. Pioneer Road</p>\r\n    <p>Salt Lake City</p>\r\n    <p>UT 84104</p>\r\n        </div>\r\n        \r\n    </footer>\r\n\r\n    <" + "script src=\"" + ___HTML_LOADER_REPLACEMENT_18___ + "\"><" + "/script>\r\n</body>\r\n\r\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -10807,7 +11328,7 @@ module.exports = styleTagTransform;
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-module.exports = __webpack_require__.p + "922d623caa1188375f9f.js";
+module.exports = __webpack_require__.p + "b336cd4c7642498cac4d.js";
 
 /***/ }),
 
@@ -10819,6 +11340,193 @@ module.exports = __webpack_require__.p + "922d623caa1188375f9f.js";
 
 "use strict";
 module.exports = __webpack_require__.p + "e8b910ad62d06ea44e9e.scss";
+
+/***/ }),
+
+/***/ "./src/images/photo/brussel.png":
+/*!**************************************!*\
+  !*** ./src/images/photo/brussel.png ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/brussel.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/carrot.png":
+/*!*************************************!*\
+  !*** ./src/images/photo/carrot.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/carrot.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/corn.png":
+/*!***********************************!*\
+  !*** ./src/images/photo/corn.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/corn.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/eggplant.png":
+/*!***************************************!*\
+  !*** ./src/images/photo/eggplant.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/eggplant.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/girl.png":
+/*!***********************************!*\
+  !*** ./src/images/photo/girl.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/girl.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/girl2.png":
+/*!************************************!*\
+  !*** ./src/images/photo/girl2.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/girl2.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/girl3.png":
+/*!************************************!*\
+  !*** ./src/images/photo/girl3.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/girl3.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/info1.png":
+/*!************************************!*\
+  !*** ./src/images/photo/info1.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/info1.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/info2.png":
+/*!************************************!*\
+  !*** ./src/images/photo/info2.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/info2.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/leek.png":
+/*!***********************************!*\
+  !*** ./src/images/photo/leek.png ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/leek.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/mushrooms.png":
+/*!****************************************!*\
+  !*** ./src/images/photo/mushrooms.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/mushrooms.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/potatoes.png":
+/*!***************************************!*\
+  !*** ./src/images/photo/potatoes.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/potatoes.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/radish.png":
+/*!*************************************!*\
+  !*** ./src/images/photo/radish.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/radish.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/tomato.png":
+/*!*************************************!*\
+  !*** ./src/images/photo/tomato.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/tomato.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/user1.png":
+/*!************************************!*\
+  !*** ./src/images/photo/user1.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/user1.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/user2.png":
+/*!************************************!*\
+  !*** ./src/images/photo/user2.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/user2.png";
+
+/***/ }),
+
+/***/ "./src/images/photo/user3.png":
+/*!************************************!*\
+  !*** ./src/images/photo/user3.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "images/user3.png";
 
 /***/ })
 
@@ -10990,12 +11698,25 @@ _global["default"]._babelPolyfill = true;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.html */ "./src/index.html");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss?3dac");
+/* harmony import */ var _handlers_clickOnHeaderMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./handlers/clickOnHeaderMenu */ "./src/handlers/clickOnHeaderMenu.js");
 
 
-const multi = (a, b) => a * b;
-console.log(multi(3, 3));
+
+const openMenuClick = document.querySelector(".header-menu");
+const headerNavList = document.querySelector(".header-nav");
+const mainTag = document.querySelector(".main");
+openMenuClick.addEventListener("click", () => {
+  openMenuClick.classList.toggle("header-menu--open");
+  (0,_handlers_clickOnHeaderMenu__WEBPACK_IMPORTED_MODULE_2__["default"])(openMenuClick, mainTag);
+  headerNavList.classList.toggle("header-nav-selected-menu");
+});
+let links = document.getElementsByTagName("a");
+let arrLinks = [...links];
+arrLinks.forEach(link => link.addEventListener("click", e => {
+  e.preventDefault();
+}));
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.609323673aad09152bc8.js.map
+//# sourceMappingURL=index.ddfb5c9f30bb15ec9e33.js.map

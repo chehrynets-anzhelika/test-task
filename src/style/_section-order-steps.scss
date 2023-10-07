@@ -1,0 +1,34 @@
+.order-steps {
+    &--bg {
+        background: url("images/svg/bg.svg");
+        background-color: $pink;
+        border-radius: 50px;
+        padding-top: 40px;
+    }
+    &--title {
+        margin-bottom: 40px;
+    }
+    &-list {
+        list-style-type: none;
+        counter-reset: num;
+        padding-left: 74px;
+        width: 75%;
+        margin: 0;
+        @include fonts(400, 14px, 18px);
+        &__item {
+            position: relative;
+            margin-bottom: 40px;
+            &::before {
+                content: counter(num);
+                counter-increment: num;
+                background-color: $background;
+                padding: 10px 17px;
+                border-radius: 50%;
+                @include fonts(400, 18px, 18px);
+                position: absolute;
+                left: -55px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,40 @@
+.order-info{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    &-img {
+        margin: 20px auto;
+        display: block;
+        @include breakpoint-mf("md"){
+            margin: 0;
+        }
+        @include breakpoint-mf("xl"){
+            width: 410px;
+            height: 170px;
+        }
+    }
+    &-text-wrap {
+        @include flex(column, flex-start, flex-start);
+        gap: 20px;
+        &__item {
+            @include fonts(400, 14px, 18px);
+            margin: 0;
+        @include breakpoint-mf("md"){
+            width: 50%;
+        }
+        @include breakpoint-mf("xl"){
+            width: 25%;
+            @include fonts(400, 18px, 24px);
+        }
+        }
+        @include breakpoint-mf("md"){
+            @include flex(row, flex-start, flex-start);
+            margin-top: 40px;
+        }
+    }
+    @include breakpoint-mf("md"){
+        &-header-wrap{
+            @include flex(row, space-between, center);
+        }
+    }
+}
