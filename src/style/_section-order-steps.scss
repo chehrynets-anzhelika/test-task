@@ -24,6 +24,9 @@
             text-align: left;
             margin-bottom: 0;
         }
+        @include breakpoint-mf("xl") {
+            @include fonts(500, 40px, 44px);
+        }
     }
     &-list {
         grid-area: c;
