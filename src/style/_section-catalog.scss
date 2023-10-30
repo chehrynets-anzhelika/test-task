@@ -25,7 +25,7 @@
             }
             @include breakpoint-mf("kn"){
                 &:last-child {
-                    display: block;
+                    display: flex;
                 }
             }
             @include flex(column, center, center);
