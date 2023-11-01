@@ -99,6 +99,7 @@
         }
         &:hover{
             background-color: $background;
+            color: $white;
         }
         @include breakpoint-mf("md"){
             width: 114px;
