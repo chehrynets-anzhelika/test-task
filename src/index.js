@@ -16,7 +16,9 @@ headerNavList.classList.toggle("header-nav-selected-menu");
 let links = document.getElementsByTagName("a");
 let arrLinks = [...links];
 arrLinks.forEach(link => link.addEventListener("click", (e) => {
-e.preventDefault();
+    if(!link.href.startsWith("tel:")) {
+        e.preventDefault();
+    }
 }));
 
 

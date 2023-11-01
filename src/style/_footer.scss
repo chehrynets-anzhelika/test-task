@@ -1,0 +1,75 @@
+.footer {
+    background-color: $light;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &-img {
+        display: block;
+        margin: 0 auto;
+    }
+    &-logo {
+        @include flex(row, center, center);
+        gap: 8px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        &__name {
+            margin-top: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            color: $text;
+            @include fonts(700, 21px, 24px);
+        }
+    }
+    &-nav-list {
+        @include flex(row, center, center);
+        gap: 20px;
+        margin-bottom: 40px;
+        &__item {
+            @include fonts(400, 14px, 18px);
+            cursor: pointer;
+        }
+        @include breakpoint-mf("xl") {
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translateX(-25%);
+            margin-bottom: 0;
+        }
+    }
+    &-social-list {
+        @include flex(row, center, center);
+        gap: 20px;
+        margin-bottom: 40px;
+        &__item {
+            width: 40px;
+            height: 40px;
+            border: 1px solid $text;
+            border-radius: 10px;
+            @include flex(row, center, center);
+        }
+        @include breakpoint-mf("md") {
+            @include flex(row, flex-start, center);
+        }
+    }
+    &-contacts {
+        @include fonts(400, 14px, 18px);
+        @include flex(column, center,center);
+        &__item {
+            margin: 0;
+        }
+        &__phone {
+            margin-bottom: 20px;
+            color: $text;
+        }
+        @include breakpoint-mf("md") {
+            @include flex(column, flex-start, flex-start);
+            @include fonts(400, 18px, 24px);
+        }
+    }
+    &-flex-container {
+        position: relative;
+        @include breakpoint-mf("md"){
+            @include flex(row, space-between, flex-start);
+        }
+        
+    }
+}

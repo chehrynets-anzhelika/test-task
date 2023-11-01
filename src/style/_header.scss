@@ -3,7 +3,8 @@
 .header-wrapper {
     @include flex(row, space-between, center);
     background-color: #FFF;
-    padding: 17px 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
     height: 50px;
     
 }
