@@ -46,3 +46,26 @@ function recallHandler() {
 }
 
 
+let orderBtn = document.querySelector(".catalog-button");
+let closePopUpBtn = document.querySelector(".order-pop-up-close");
+let popup = document.querySelector(".order-pop-up");
+let newUrl= "order";
+
+orderBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+    document.body.style.overflow = "hidden";
+    history.pushState(null,null, newUrl);
+} );
+
+closePopUpBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    document.body.style.overflow = "auto";
+    let currentUrl = window.location.href;
+    console.log(currentUrl);
+    if(currentUrl.includes("/order")) {
+        currentUrl = currentUrl.replace("/order", "");
+        history.pushState(null, null, currentUrl);
+    }
+});
+
+

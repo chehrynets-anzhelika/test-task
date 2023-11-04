@@ -52,10 +52,13 @@
                 </a>
                 <nav class="header-nav">
                     <ul class="header-nav-list">
-                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">How It Works</a>
+                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">How It
+                                Works</a>
                         </li>
-                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">Vegetables</a></li>
-                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">Contacts</a></li>
+                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">Vegetables</a>
+                        </li>
+                        <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#">Contacts</a>
+                        </li>
                         <li class="header-nav-list__item"><a class="header-nav-list__item-link" href="#"><svg width="20"
                                     height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_251_71)">
@@ -94,7 +97,8 @@
                                     stroke-linejoin="round" />
                                 <path
                                     d="M0.833374 0.833374H4.16671L6.40004 11.9917C6.47625 12.3754 6.68496 12.72 6.98966 12.9653C7.29436 13.2106 7.67562 13.3409 8.06671 13.3334H16.1667C16.5578 13.3409 16.9391 13.2106 17.2438 12.9653C17.5485 12.72 17.7572 12.3754 17.8334 11.9917L19.1667 5.00004H5.00004"
-                                    stroke="#141414" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    stroke="#141414" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </g>
                             <defs>
                                 <clipPath id="clip0_251_67">
@@ -647,6 +651,68 @@
                 </div>
             </div>
         </section>
+        <section class="order-pop-up">
+            <div class="order-pop-up-container-section">
+<div class="container">
+                <div class="order-pop-up-container-title">
+                    <h3 class="order-pop-up-title">Your Order</h3>
+                    <input type="button" class="order-pop-up-close"/>
+                </div>
+                
+                <ul class="order-pop-up-list">
+                    <li class="order-pop-up-list__item order-list">
+                        <p class="order-list-title">Cabbage Basket</p>
+                        <input class="order-list-checkbox" id="order-checkbox1" type="checkbox">
+                        <label for="order-checkbox1"></label>
+                        <p class="order-list-categorie">Plant</p>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="images/photo/cabbage-basket-tablet.png" width="150" height="150">
+                        <img class="order-list-image" src="images/photo/cabbage.png" alt="cabbage" width="94"
+                            height="78">
+                        </picture>
+                    </li>
+                    <li class="order-pop-up-list__item order-list">
+                        <p class="order-list-title">Tomato Basket</p>
+                        <input class="order-list-checkbox" id="order-checkbox2" type="checkbox">
+                        <label for="order-checkbox2"></label>
+                        <p class="order-list-categorie">Plant</p>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="images/photo/tomato-basket-tablet.png" width="150" height="150">
+                           <img class="order-list-image" src="images/photo/tomato-basket.png" alt="tomatos" width="94"
+                            height="78"> 
+                        </picture>
+                    </li>
+                    <li class="order-pop-up-list__item order-list">
+                        <p class="order-list-title">Vegetables Basket</p>
+                        <input class="order-list-checkbox" id="order-checkbox3" type="checkbox">
+                        <label for="order-checkbox3"></label>
+                        <p class="order-list-categorie">Plant</p>
+                        <picture>
+                            <source media="(min-width: 768px)" srcset="images/photo/vegetables-basket-tablet.png" width="150" height="150">
+                            <img class="order-list-image" src="images/photo/vegetables-basket.png" alt="vegetables"
+                            width="94" height="78">
+                        </picture>
+                        
+                    </li>
+                </ul>
+                <form action="#" class="order-pop-up-form">
+                    <input class="order-pop-up-form__item" type="text" placeholder="Enter full name...">
+                    <input class="order-pop-up-form__item" type="email" placeholder="Enter email...">
+                    <input class="order-pop-up-form__item" type="text" placeholder="Enter adress...">
+                    <input class="order-pop-up-form__item" type="text" placeholder="Enter phone number...">
+                    <textarea class="order-pop-up-form__item order-pop-up-form__item--comments" rows="5" cols="30"
+                        type="text" placeholder="Enter comments..."></textarea>
+                    <input class="order-pop-up-form__item order-pop-up-form__item--submit" type="button" type="button"
+                        value="Submit">
+                </form>
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="images/photo/girl-popup-desctop.png" width="444" height="414">
+                   <img class="order-pop-up-image" src="images/photo/girl-pop-uppng.png" alt="girl-image" width="350" height="413"> 
+                </picture>
+                 
+            </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="container">
@@ -732,7 +798,8 @@
                             </a></li>
                     </ul>
                     <div class="footer-contacts">
-                        <a href="tel:+380 (68) 443-94-26" class="footer-contacts__item footer-contacts__phone">+380 (68) 443-94-26</a>
+                        <a href="tel:+380 (68) 443-94-26" class="footer-contacts__item footer-contacts__phone">+380 (68)
+                            443-94-26</a>
                         <p class="footer-contacts__item footer-contacts__street">1678 S. Pioneer Road</p>
                         <p class="footer-contacts__item footer-contacts__city">Salt Lake City</p>
                         <p class="footer-contacts__item footer-contacts__post-code">UT 84104</p>
@@ -741,7 +808,6 @@
             </div>
         </div>
     </footer>
-
     <script src="index.js"></script>
 </body>
 
