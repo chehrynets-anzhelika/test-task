@@ -1,6 +1,8 @@
 import "./index.html";
 import "./index.scss";
 import clickOnHeaderMenu from "./handlers/clickOnHeaderMenu";
+import clickOnSubmitBtn from "./handlers/clickOnSubmitBtn";
+
 import IMask from 'imask';
 
 const openMenuClick = document.querySelector(".header-menu");
@@ -49,23 +51,43 @@ function recallHandler() {
 let orderBtn = document.querySelector(".catalog-button");
 let closePopUpBtn = document.querySelector(".order-pop-up-close");
 let popup = document.querySelector(".order-pop-up");
-let newUrl= "order";
+//let newUrl= "order";
 
 orderBtn.addEventListener("click", () => {
     popup.style.display = "block";
     document.body.style.overflow = "hidden";
-    history.pushState(null,null, newUrl);
+    // history.pushState(null,null, newUrl);
 } );
 
 closePopUpBtn.addEventListener("click", () => {
     popup.style.display = "none";
     document.body.style.overflow = "auto";
-    let currentUrl = window.location.href;
-    console.log(currentUrl);
-    if(currentUrl.includes("/order")) {
-        currentUrl = currentUrl.replace("/order", "");
-        history.pushState(null, null, currentUrl);
-    }
+    // let currentUrl = window.location.href;
+    // console.log(currentUrl);
+    // if(currentUrl.includes("/order")) {
+    //     currentUrl = currentUrl.replace("/order", "");
+    //     history.pushState(null, null, currentUrl);
+    // }
 });
+
+let btnSubmitForm = document.querySelector(".order-pop-up-form__item--submit");
+
+let firstName = document.querySelector(".order-pop-up-form__item--full-name");
+let mail = document.querySelector(".order-pop-up-form__item--email");
+let card = document.querySelector(".order-pop-up-form__item--card");
+//let phoneInForm = document.querySelector(".order-pop-up-form__item--phone");
+
+// const mask2 = new IMask(phoneInForm, {
+//     mask: "+{38\\0}(00)000-00-00",
+//     lazy: false,
+// });
+
+// let mask2Value = mask.value;
+
+btnSubmitForm.addEventListener("click", () => {
+    clickOnSubmitBtn(firstName, mail, card);
+})
+
+
 
 
