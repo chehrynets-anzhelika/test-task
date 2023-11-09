@@ -29,6 +29,7 @@
         background-image: url("images/svg/close.svg");
         border: none;
         background-color: transparent;
+        cursor: pointer;
     }
 
     &-list {
@@ -79,10 +80,31 @@
             @include breakpoint-mf("md") {
                 height: 48px;
             }
+            &::placeholder{
+                color: gray;
+            }
+            &:focus {
+                outline: none;
+                border: 2px solid $orange;
+            }
+
+            // &:invalid {
+            //     border-color: #900 ;
+            //     background-color: #fdd;
+            // }
+
+            // &:valid:not(.order-pop-up-form__item--submit, .order-pop-up-form__item--comments) {
+            //     border: 2px solid $background;
+            // }
+
+            &--phone {
+                color: gray;
+            }
 
             &--comments {
                 height: 132px;
                 border-radius: 20px;
+                resize: none;
 
                 @include breakpoint-mf("md") {
                     height: 145px;
@@ -100,6 +122,7 @@
                 margin-top: 6px;
                 margin-left: 0;
                 align-self: flex-start;
+                cursor: pointer;
 
                 @include breakpoint-mf("md") {
                     width: 114px;
