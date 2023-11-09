@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap"
         rel="stylesheet">
-    <title>Veggie bust</title>
+    <title>Veggie boost</title>
 </head>
 
 <body>
@@ -696,14 +696,13 @@
                     </li>
                 </ul>
                 <form action="#" class="order-pop-up-form">
-                    <input class="order-pop-up-form__item" type="text" placeholder="Enter full name...">
-                    <input class="order-pop-up-form__item" type="email" placeholder="Enter email...">
-                    <input class="order-pop-up-form__item" type="text" placeholder="Enter adress...">
-                    <input class="order-pop-up-form__item" type="text" placeholder="Enter phone number...">
+                    <input class="order-pop-up-form__item order-pop-up-form__item--full-name" name="first-name" type="text" placeholder="Enter full name... (required)" required>
+                    <input class="order-pop-up-form__item order-pop-up-form__item--email" name="email" type="email" placeholder="Enter email... (required)" required>
+                    <input class="order-pop-up-form__item order-pop-up-form__item--card" name="card" type="number" placeholder="Enter card... (required)" required>
                     <textarea class="order-pop-up-form__item order-pop-up-form__item--comments" rows="5" cols="30"
-                        type="text" placeholder="Enter comments..."></textarea>
-                    <input class="order-pop-up-form__item order-pop-up-form__item--submit" type="button" type="button"
-                        value="Submit">
+                        type="text" placeholder="Enter comments...(optional)"></textarea>
+                    <button class="order-pop-up-form__item order-pop-up-form__item--submit" type="submit"
+                        value="Submit">Submit</button>
                 </form>
                 <picture>
                     <source media="(min-width: 1200px)" srcset="images/photo/girl-popup-desctop.png" width="444" height="414">
