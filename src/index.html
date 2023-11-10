@@ -695,12 +695,57 @@
                         
                     </li>
                 </ul>
-                <form action="#" class="order-pop-up-form">
-                    <input class="order-pop-up-form__item order-pop-up-form__item--full-name" name="first-name" type="text" placeholder="Enter full name... (required)" required>
-                    <input class="order-pop-up-form__item order-pop-up-form__item--email" name="email" type="email" placeholder="Enter email... (required)" required>
-                    <input class="order-pop-up-form__item order-pop-up-form__item--card" name="card" type="number" placeholder="Enter card... (required)" required>
-                    <textarea class="order-pop-up-form__item order-pop-up-form__item--comments" rows="5" cols="30"
-                        type="text" placeholder="Enter comments...(optional)"></textarea>
+                <form action="#" class="order-pop-up-form" novalidate>
+                    <label for="full-name" class="order-pop-up-form-label">
+                    <input 
+                    id ="full-name" 
+                    class="order-pop-up-form__item order-pop-up-form__item--full-name" 
+                    name="full-name" 
+                    type="text" 
+                    placeholder="Enter full name... (required)"
+                    pattern="^([A-Za-zА-Яа-я]+\s){1,2}[A-Za-zА-Яа-я]+$"
+                    title="Please enter only letters"
+                    required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>
+                    </label>
+                    
+                    
+                    <label for="email" class="order-pop-up-form-label">
+                    <input
+                    id="email"
+                    class="order-pop-up-form__item order-pop-up-form__item--email" 
+                    name="email" 
+                    type="email" 
+                    placeholder="Enter email... (required)"
+                    title="Please enter your email address" 
+                    required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>
+                    </label>
+                    
+                    <label for="card" class="order-pop-up-form-label">
+                    <input 
+                    id="card"
+                    class="order-pop-up-form__item order-pop-up-form__item--card" 
+                    name="card" 
+                    type="text" 
+                    placeholder="Enter card... (required)" 
+                    pattern="\d{16}"
+                    title="Enter your card number (16 digits)"
+                    required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>  
+                    </label>
+                    
+                    
+                    <textarea 
+                    class="order-pop-up-form__item order-pop-up-form__item--comments"
+                    rows="5" 
+                    cols="30"
+                    maxlength="300"
+                    wrap="soft"
+                    type="text"
+                    placeholder="Enter comments...(optional)"
+                    title="If you want to add something, type it here"></textarea>
+                    
                     <button class="order-pop-up-form__item order-pop-up-form__item--submit" type="submit"
                         value="Submit">Submit</button>
                 </form>
