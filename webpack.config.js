@@ -30,13 +30,23 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: "index.[contenthash].css"
-        })
+        }),
     ],
     module: {
         rules: [
             {
-                test: /\.html$/i,
-                loader: "html-loader",
+              test: /\.html$/i,
+              use: [
+                'html-loader',
+                {
+                  loader: 'posthtml-loader',
+                  options: {
+                    plugins: [
+                      require("posthtml-include")({root: "./src"})
+                    ]
+                  }
+                }
+              ]
             },
             {
                 test: /\.(c|sa|sc)ss$/i,
