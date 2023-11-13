@@ -1,0 +1,88 @@
+<section class="order-pop-up">
+    <div class="order-pop-up-container-section">
+        <div class="container">
+            <div class="order-pop-up-container-title">
+                <h3 class="order-pop-up-title">Your Order</h3>
+                <input type="button" class="order-pop-up-close" />
+            </div>
+
+            <ul class="order-pop-up-list">
+                <li class="order-pop-up-list__item order-list">
+                    <p class="order-list-title">Cabbage Basket</p>
+                    <input class="order-list-checkbox" id="order-checkbox1" type="checkbox">
+                    <label for="order-checkbox1"></label>
+                    <p class="order-list-categorie">Plant</p>
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="images/photo/cabbage-basket-tablet.png" width="150"
+                            height="150">
+                        <img class="order-list-image" src="images/photo/cabbage.png" alt="cabbage" width="94"
+                            height="78">
+                    </picture>
+                </li>
+                <li class="order-pop-up-list__item order-list">
+                    <p class="order-list-title">Tomato Basket</p>
+                    <input class="order-list-checkbox" id="order-checkbox2" type="checkbox">
+                    <label for="order-checkbox2"></label>
+                    <p class="order-list-categorie">Plant</p>
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="images/photo/tomato-basket-tablet.png" width="150"
+                            height="150">
+                        <img class="order-list-image" src="images/photo/tomato-basket.png" alt="tomatos" width="94"
+                            height="78">
+                    </picture>
+                </li>
+                <li class="order-pop-up-list__item order-list">
+                    <p class="order-list-title">Vegetables Basket</p>
+                    <input class="order-list-checkbox" id="order-checkbox3" type="checkbox">
+                    <label for="order-checkbox3"></label>
+                    <p class="order-list-categorie">Plant</p>
+                    <picture>
+                        <source media="(min-width: 768px)" srcset="images/photo/vegetables-basket-tablet.png"
+                            width="150" height="150">
+                        <img class="order-list-image" src="images/photo/vegetables-basket.png" alt="vegetables"
+                            width="94" height="78">
+                    </picture>
+
+                </li>
+            </ul>
+            <form action="#" class="order-pop-up-form" novalidate>
+                <label class="order-pop-up-form-label">
+                    <input id="full-name" class="order-pop-up-form__item order-pop-up-form__item--full-name"
+                        name="full-name" type="text" placeholder="Enter full name... (required)"
+                        pattern="^([A-Za-zА-Яа-я]+\s){1,2}[A-Za-zА-Яа-я]+$" title="Please enter only letters" required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>
+                </label>
+
+
+                <label class="order-pop-up-form-label">
+                    <input id="email" class="order-pop-up-form__item order-pop-up-form__item--email" name="email"
+                        type="email" placeholder="Enter email... (required)" title="Please enter your email address"
+                        required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>
+                </label>
+
+                <label class="order-pop-up-form-label">
+                    <input id="card" class="order-pop-up-form__item order-pop-up-form__item--card" name="card"
+                        type="text" placeholder="Enter card... (required)" pattern="\d{16}"
+                        title="Enter your card number (16 digits)" required>
+                    <span class="order-pop-up-form__item--error" aria-live="polite"></span>
+                </label>
+
+
+                <textarea class="order-pop-up-form__item order-pop-up-form__item--comments" rows="5" cols="30"
+                    maxlength="300" wrap="soft" type="text" placeholder="Enter comments...(optional)"
+                    title="If you want to add something, type it here"></textarea>
+
+                <button class="order-pop-up-form__item order-pop-up-form__item--submit" type="submit"
+                    value="Submit">Submit</button>
+            </form>
+            <picture>
+                <source media="(min-width: 1200px)" srcset="images/photo/girl-popup-desctop.png" width="444"
+                    height="414">
+                <img class="order-pop-up-image" src="images/photo/girl-pop-uppng.png" alt="girl-image" width="350"
+                    height="413">
+            </picture>
+
+        </div>
+    </div>
+</section>
