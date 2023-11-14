@@ -35,7 +35,7 @@ module.exports = {
     }),
     new SvgSpriteHtmlWebpackPlugin({
       includeFiles: [
-        "src/images/svg/*.svg",
+        "src/images/svg/sprites/*.svg",
       ]
     }),
   ],
