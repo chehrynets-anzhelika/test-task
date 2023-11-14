@@ -6,8 +6,6 @@
         border-radius: 50px;
         @include flex(column, center, center);
         &-img {
-            width: 295px;
-            height: 220px;
             grid-area: a;
             @include breakpoint-mf("md"){
                 width: 544px;

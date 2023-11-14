@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const SvgSpriteHtmlWebpackPlugin = require('svg-sprite-html-webpack');
 
 const mode = process.env.NODE_ENV || "development";
 const devMode = mode === "development";
@@ -33,11 +32,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "index.[contenthash].css"
     }),
-    new SvgSpriteHtmlWebpackPlugin({
-      includeFiles: [
-        "src/images/svg/sprites/*.svg",
-      ]
-    }),
   ],
   module: {
     rules: [
@@ -50,7 +44,8 @@ module.exports = {
             options: {
               plugins: [
                 require("posthtml-include")({ root: "./src" })
-              ]
+              ],
+
             }
           }
         ]
@@ -72,7 +67,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        test: /\.(woff(2)?|eot|ttf|otf|)$/,
         type: "asset/inline",
         generator: {
           filename: "fonts/[name][ext]"
@@ -111,14 +106,6 @@ module.exports = {
           filename: "images/[name][ext]"
         }
       },
-
-      {
-        test: /\.svg$/,
-        include: /src\/images\/svg\/sprites/,
-        exclude: /node_modules/,
-        use: SvgSpriteHtmlWebpackPlugin.getLoader(),
-      },
-
       {
         test: /\.(?:js|mjs|cjs)$/i,
         exclude: /node_modules/,
