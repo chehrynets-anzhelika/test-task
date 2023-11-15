@@ -1,3 +1,7 @@
+import getCheckedCheckboxes from "../handlers/getCheckedCheckboxes";
+import getNameBasket from "../handlers/getNameBasket";
+import clearAllCheckboxes from "../handlers/clearAllCheckboxes";
+
 const form = document.querySelector(".order-pop-up-form");
 
 let fields = {
@@ -40,13 +44,6 @@ function validateField(field) {
             showError(input, error, field.messages);
         }
     });
-
-    form.addEventListener("submit", (e) => {
-        if(!input.validity.valid) {
-            showError(input, error, field.messages);
-            e.preventDefault();
-        }
-    });
 }
 
 function showError(input, errorElement, messages) {
@@ -57,10 +54,44 @@ function showError(input, errorElement, messages) {
     } else {
         errorElement.textContent = "";
     }
-    
     errorElement.className = "order-pop-up-form__item--error active";
 }
 
 for(let fieldName in fields) {
     validateField(fields[fieldName]);
 }
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let allFieldsValid = true;
+    for (let field in fields) {
+        if (!fields[field].input.validity.valid) {
+            showError(fields[field].input, fields[field].error, fields[field].messages);
+            allFieldsValid = false;
+        }
+    }
+
+    if (allFieldsValid) {
+        let arrOfIdCheckboxes = getCheckedCheckboxes();
+        let arrNamesOfBasket = getNameBasket(arrOfIdCheckboxes);
+        let namesBasket = arrNamesOfBasket.join(', ');
+        console.log(`Data received.
+        ${namesBasket}
+        Full name: ${fields.fullName.input.value}
+        Email: ${fields.mail.input.value}
+        Card: ${fields.card.input.value}
+        Comments: ${document.querySelector(".order-pop-up-form__item--comments").value}`);
+        document.querySelector(".order-pop-up-form__item--comments").value = "";
+        for(let field in fields) {
+            fields[field].error.textContent = "";
+            fields[field].input.value = "";
+        }
+        clearAllCheckboxes();
+    }
+});
+
+
+
+
+
