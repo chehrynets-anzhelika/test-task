@@ -5,6 +5,7 @@ import "./js/linksPreventDefault.js";
 import "./js/maskPhone.js";
 import "./js/popup.js";
 import "./js/burgerMenu.js";
+import "./js/buttonUp.js";
 
 
 
