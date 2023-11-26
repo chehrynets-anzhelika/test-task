@@ -1,0 +1,58 @@
+.btn-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $orange;
+    border-radius: 50%;
+    border: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    &::before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url("images/svg/up.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 0 auto;
+    }
+    &_hide {
+        display: none;
+    }
+    &_hiding {
+        opacity: 0;
+    }
+    &:hover:not(:active) {
+        background-color: $background;
+        transition: .7s;
+        outline: 1px solid $background;
+        outline-offset: 5px;
+    }
+    &:focus {
+        outline: 1px solid $orange;
+        outline-offset: 5px;
+        transition: .5s;                
+    }
+    &:active:before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url("images/svg/upHover.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin: 5px auto 0;
+    }
+    &:active {
+        background-color: $background;
+        outline: none;
+        outline-offset: 0;
+        width: 58px;
+        height: 58px;
+    }
+    
+}                   
