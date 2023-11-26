@@ -8,34 +8,35 @@
 
         &__item {
             @include flex(row, center, center);
+            // width: 40px;
+            // height: 40px;
             border: 3px solid $white;
             border-radius: 50%;
             position: relative;
-
-            &:last-child::after {
-                content: "2K";
-                position: absolute;
-                width: 45px;
-                height: 45px;
-                background-color: $white;
+            transition: .7s;
+            &:hover {
+                z-index: 3;
+                transform: scale(1.05);
+            }
+            &--last {
+                @include flex(column, center, center);
+                width: 46px;
+                height: 46px;
                 border-radius: 50%;
-                left: 27px;
+                background-color: $white;
+                padding: 10px;
+            }
+
+            &--number-reviews {
                 text-align: center;
-                padding-top: 5px;
                 @include fonts(500, 18px, 24px);
                 color: $text;
             }
-
-            &:last-child::before {
-                content: "reviews";
-                position: absolute;
-                left: 32px;
-                bottom: 5px;
+            &--reviews {
                 text-align: center;
-                padding-top: 5px;
+                margin-bottom: 5px;
                 @include fonts(400, 10px, 12px);
                 color: $text;
-                z-index: 5;
             }
 
             &:not(:first-child) {
