@@ -2,18 +2,33 @@
     background-color: $background;
     padding-top: 48px;
     padding-bottom: 20px;
+    &-wrapper {
+        overflow: hidden;
+    }
+
 
     &-user-list {
         @include flex(row, flex-start, center);
+        margin-top: 5px;
+        animation: slideAndBounce 2s ease-out;
+        @keyframes slideAndBounce {
+            0% {
+              transform: translateX(-50%);
+            }
+            60% {
+              transform: translateX(10%);
+            }
+            100% {
+              transform: translateX(0);
+
+            }
+          }
 
         &__item {
             @include flex(row, center, center);
-            // width: 40px;
-            // height: 40px;
             border: 3px solid $white;
             border-radius: 50%;
             position: relative;
-            transition: .7s;
             &:hover {
                 z-index: 3;
                 transform: scale(1.05);
@@ -38,10 +53,18 @@
                 @include fonts(400, 10px, 12px);
                 color: $text;
             }
-
             &:not(:first-child) {
                 margin-left: -15px;
+                animation: slideMargin 2s ease-in-out;
             }
+            @keyframes slideMargin {
+                0% {
+                  margin-left: 5px;
+                }
+                100% {
+                  margin-left: -15px;
+                }
+              }
         }
     }
 
@@ -99,7 +122,7 @@
         grid-template-rows: auto auto;
         gap: 5px;
         width: 200px;
-        margin: 8px 0 0 auto;
+        margin: 8px 5px 0 auto;
 
         &__item {
             cursor: pointer;

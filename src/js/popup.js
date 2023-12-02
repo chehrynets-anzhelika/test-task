@@ -16,4 +16,6 @@ closePopUpBtn.addEventListener("click", () => {
 });
 
 let basketOnHeader = document.querySelector(".header-basket");
+let basketOnSelectedMenu = document.getElementById("basket-selected-menu");
 getPopUp(basketOnHeader, popup);
+getPopUp(basketOnSelectedMenu, popup);

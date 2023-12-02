@@ -7,15 +7,22 @@ const mainTag = document.querySelector(".main");
 openMenuClick.addEventListener("click", () => {
 openMenuClick.classList.toggle("header-menu--open");
 clickOnHeaderMenu(openMenuClick, mainTag);
-headerNavList.classList.toggle("header-nav-selected-menu");
+headerNavList.classList.toggle("header-nav-selected-menu"); 
+if(headerNavList.classList.contains("header-nav-selected-menu")) {
+    setTimeout(() => { headerNavList.style.opacity = "1"; }, 200)
+} else {
+    setTimeout(() => { headerNavList.style.opacity = "0"; }, 300);
+}
 });
 
 document.querySelectorAll('.header-nav ul li a').forEach(function(link) {
     link.addEventListener('click', function() {
         if(!headerNavList.classList.contains("header-nav-selected-menu")) return false;
         document.querySelector('.selected-menu').remove();
+        document.querySelector('.overlay').remove();
         openMenuClick.classList.remove("header-menu--open");
         headerNavList.classList.remove("header-nav-selected-menu");
+        headerNavList.style.opacity = "0"; 
         document.body.style.overflow = "";
         openMenuClick.innerHTML = `<svg width="20" height="14" viewBox="0 0 20 14" fill="none"
         xmlns="http://www.w3.org/2000/svg">
