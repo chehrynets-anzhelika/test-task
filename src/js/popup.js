@@ -4,15 +4,24 @@ let orderBtn = document.querySelector(".catalog-button");
 let closePopUpBtn = document.querySelector(".order-pop-up-close");
 let popup = document.querySelector(".order-pop-up");
 
-// orderBtn.addEventListener("click", () => {
-//     popup.style.display = "block";
-//     document.body.style.overflow = "hidden";
-// } );
 getPopUp(orderBtn, popup);
 
 closePopUpBtn.addEventListener("click", () => {
     popup.style.display = "none";
     document.body.style.overflow = "auto";
+});
+
+popup.addEventListener("click", (e) => {
+    if (e.target.tagName !== "SECTION") return false;
+    popup.style.display = "none";
+    document.body.style.overflow = "auto";
+});
+
+document.addEventListener("keydown", (e) => {
+    if (e.key == "Escape" && popup.style.display == "block") {
+        popup.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 });
 
 let basketOnHeader = document.querySelector(".header-basket");
