@@ -26,6 +26,9 @@
         &__item {
             @include fonts(400, 14px, 18px);
             cursor: pointer;
+            &-link {
+                color: $text;
+            }
         }
         @include breakpoint-mf("xl") {
             position: absolute;
@@ -45,9 +48,24 @@
             border: 1px solid $text;
             border-radius: 10px;
             @include flex(row, center, center);
+            &:hover {
+                border-color: $background;
+                .footer-social__link-item {
+                    display: none;
+                }
+                .footer-social__link-item--hover {
+                    display: block;
+                }
+            }
         }
         @include breakpoint-mf("md") {
             @include flex(row, flex-start, center);
+        }
+    }
+    &-social__link {
+        @include flex(row, center, center);
+        &-item--hover {
+            display: none;
         }
     }
     &-contacts {

@@ -1,7 +1,7 @@
 let links = document.getElementsByTagName("a");
 let arrLinks = [...links];
 arrLinks.forEach(link => link.addEventListener("click", (e) => {
-    if(!link.href.startsWith("tel:")) {
+    if(link.href.endsWith("#")) {
         e.preventDefault();
     }
 }));

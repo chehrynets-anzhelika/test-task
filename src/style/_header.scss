@@ -21,7 +21,8 @@
         left: 50%;
         margin-left: -100px;
         z-index: 10;
-
+        opacity: 0;
+        transition: opacity .5s linear;
     }
 
     &-list {
@@ -94,6 +95,17 @@
     background-color: $background;
     position: absolute;
     top: 50px;
-    left: 0;
+    left: 100%;
     z-index: 5;
+    transition: left .4s ease-out;
+}
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50px;
+    left: 100%;
+    z-index: 4;
+    transition: opacity .2s ease-out;
 }
