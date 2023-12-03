@@ -8,6 +8,18 @@ const mask = new IMask(input, {
     lazy: false,
 });
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyRLL8Ffd4VES60ifbsu3kgPy2ZbftVRok6OVsjk9IBQYNvyygZWOMyuMdanlLAnUh3tQ/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        mask.value="";
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+
 recall.addEventListener("click", recallHandler);
 input.addEventListener("input", phoneInputHandler);
 
@@ -19,6 +31,5 @@ function phoneInputHandler() {
 
 function recallHandler() {
        console.log(`Ready! We will contact you soon by phone number ${mask.value}`);
-       mask.value="";
        recall.classList.remove("recall-button--active");
 }
