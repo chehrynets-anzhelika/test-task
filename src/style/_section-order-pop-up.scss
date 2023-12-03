@@ -8,9 +8,9 @@
     display: none;
     background-color: $white;
     overflow-y: auto;
-    scroll-behavior: smooth;
     background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;  
+    cursor: pointer;
+
     &-container-title {
         @include flex(row, space-between, flex-start);
     }
@@ -163,8 +163,17 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
+        // animation: showPopUp .2s ease-in-out;
         transform-origin: top;
         box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 10px;
+    // @keyframes showPopUp {
+    //     0% {
+    //         transform: scaleY(0);
+    //      }
+    //      100% {
+    //         transform: scaleY(1);
+    //      }
+    //     }
         animation: bounce .5s ease-out;
     @keyframes bounce {
         0% {
