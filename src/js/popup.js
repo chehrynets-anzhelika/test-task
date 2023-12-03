@@ -1,4 +1,5 @@
 import getPopUp from "../handlers/getPopUp";
+import closePopUp from "../handlers/closePopup";
 
 let orderBtn = document.querySelector(".catalog-button");
 let closePopUpBtn = document.querySelector(".order-pop-up-close");
@@ -7,20 +8,17 @@ let popup = document.querySelector(".order-pop-up");
 getPopUp(orderBtn, popup);
 
 closePopUpBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-    document.body.style.overflow = "auto";
+    closePopUp(popup);
 });
 
 popup.addEventListener("click", (e) => {
     if (e.target.tagName !== "SECTION") return false;
-    popup.style.display = "none";
-    document.body.style.overflow = "auto";
+    closePopUp(popup);
 });
 
 document.addEventListener("keydown", (e) => {
     if (e.key == "Escape" && popup.style.display == "block") {
-        popup.style.display = "none";
-        document.body.style.overflow = "auto";
+        closePopUp(popup);
     }
 });
 
