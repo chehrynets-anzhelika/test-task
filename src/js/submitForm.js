@@ -1,6 +1,7 @@
 import getCheckedCheckboxes from "../handlers/getCheckedCheckboxes";
 import getNameBasket from "../handlers/getNameBasket";
 import clearAllCheckboxes from "../handlers/clearAllCheckboxes";
+import getFormattedDate from "../handlers/getFormattedDate";
 
 const form = document.querySelector(".order-pop-up-form");
 
@@ -61,6 +62,8 @@ for(let fieldName in fields) {
     validateField(fields[fieldName]);
 }
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwOZuacm_0EGWawmcP6D2AnAUrIysG5XDolOK72dtd2Err90KJscata8IwQUowScGxCuA/exec';
+
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -73,9 +76,17 @@ form.addEventListener("submit", (e) => {
     }
 
     if (allFieldsValid) {
+        let formData = new FormData(form);
         let arrOfIdCheckboxes = getCheckedCheckboxes();
         let arrNamesOfBasket = getNameBasket(arrOfIdCheckboxes);
         let namesBasket = arrNamesOfBasket.join(', ');
+        let formattedDate = getFormattedDate();
+        formData.append('namesBasket', namesBasket);
+        formData.append('date', formattedDate);
+
+        fetch(scriptURL, { method: 'POST', body: formData, mode: "no-cors"})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message));
         console.log(`Data received.
         ${namesBasket}
         Full name: ${fields.fullName.input.value}
