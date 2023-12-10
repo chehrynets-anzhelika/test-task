@@ -2,6 +2,7 @@ import getCheckedCheckboxes from "../handlers/getCheckedCheckboxes";
 import getNameBasket from "../handlers/getNameBasket";
 import clearAllCheckboxes from "../handlers/clearAllCheckboxes";
 import getFormattedDate from "../handlers/getFormattedDate";
+import Notiflix from 'notiflix';
 
 const form = document.querySelector(".order-pop-up-form");
 
@@ -84,25 +85,25 @@ form.addEventListener("submit", (e) => {
         formData.append('namesBasket', namesBasket);
         formData.append('date', formattedDate);
 
+        Notiflix.Loading.standard("Sending data...");
+
         fetch(scriptURL, { method: 'POST', body: formData, mode: "no-cors"})
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message));
-        console.log(`Data received.
-        ${namesBasket}
-        Full name: ${fields.fullName.input.value}
-        Email: ${fields.mail.input.value}
-        Card: ${fields.card.input.value}
-        Comments: ${document.querySelector(".order-pop-up-form__item--comments").value}`);
-        document.querySelector(".order-pop-up-form__item--comments").value = "";
-        for(let field in fields) {
-            fields[field].error.textContent = "";
-            fields[field].input.value = "";
-        }
-        clearAllCheckboxes();
+        .then(response => {
+            Notiflix.Loading.remove();
+            Notiflix.Notify.success("Your data has been sent successfully.");
+            console.log('Success!', response);
+            document.querySelector(".order-pop-up-form__item--comments").value = "";
+            for(let field in fields) {
+                fields[field].error.textContent = "";
+                fields[field].input.value = "";
+            }
+            clearAllCheckboxes();})
+        .catch(error => {
+            Notiflix.Loading.remove();
+            Notiflix.Notify.warning("Data was not sent.")
+            console.error('Error!', error.message)});
     }
 });
-
-
 
 
 
