@@ -1,0 +1,220 @@
+.main {
+    width: 1134px;
+    background-color: rgba(226, 236, 249, 0.5);
+    padding-top: 41px;
+    padding-bottom: 258px;
+
+    &-heading {
+        @include fonts(500, 24px, 36px);
+        color: $text;
+        margin-left:71px;
+    }
+
+    &-table {
+        position: relative;
+        margin: 51px auto 0;
+        max-width: 968px;
+        padding: 30px 40px 40px 40px;
+        border-radius: 30px;
+        background-color: $hoverColor;
+
+        &__table {
+            border-collapse: collapse;
+            table-layout: auto;
+            width: 100%;
+            overflow-x: auto;
+            @include fonts(500, 14px, 21px);
+        }
+
+        &__caption {
+            @include fonts(600, 22px, 33px);
+            margin-bottom: 68px;
+            text-align: left;
+            position: relative;
+
+            &::after {
+                content: "Active Members";
+                position: absolute;
+                @include fonts(400, 14px, 21px);
+                color: #16C098;
+                top: 27px;
+                left: 0;
+            }
+        }
+
+        &__head {
+            color: $tablehead;
+            text-align: left;
+            border-bottom: 1px solid $pageBackground;
+
+            & th {
+                padding-bottom: 14px;
+            }
+        }
+
+        &__body {
+            color: $tablebody;
+
+            & tr {
+                border-bottom: 1px solid $pageBackground;
+            }
+
+            & td {
+                padding: 20px 0 20px;
+                text-align: left;
+            }
+
+            &-btn {
+                max-width: 80px;
+                height: 29px;
+                @include fonts(500, 14px, 21px);
+                padding: 4px 12px;
+                border-radius: 4px;
+                cursor: pointer;
+
+                &--active {
+                    background-color: $activeButtonBackground;
+                    color: $activeButtonColor;
+                    border: 1px solid $activeButtonColor;
+                }
+
+                &--inactive {
+                    background-color: $inActiveButtonBackground;
+                    color: $inActiveButtonColor;
+                    border: 1px solid $inActiveButtonColor;
+                }
+            }
+
+        }
+
+        &__foot {
+            color: $tablehead;
+
+            &-list {
+                @include flex(row, space-between, center);
+                gap: 12px;
+
+                &__item {
+                    width: 25px;
+                    height: 24px;
+                    border-radius: 4px;
+                    background-color: $pageBackground;
+                    padding: 6px 0;
+                    cursor: pointer;
+                    color: #404B52;
+                    @include fonts(500, 12px, 12px);
+                    text-align: center;
+                    transition:
+                        background-color .5s ease-in-out,
+                        color .5s ease-in-out;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: $hoverBackground;
+                        color: $hoverColor;
+                    }
+                }
+            }
+
+
+            & td {
+                padding-top: 30px;
+                padding-bottom: 40px;
+            }
+
+            & tr {
+                border: none;
+            }
+            &-mobile {
+                display: none;
+            }
+
+        }
+    }
+
+    &-search {
+        position: absolute;
+        border: none;
+        background-color: #F9FBFF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+        width: 216px;
+        height: 38px;
+        border-radius: 10px;
+        right: 53px;
+        top: 44px;
+        background-image: url("./images/svg/search.svg");
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-position: 7px 8px;
+
+        &::placeholder {
+            color: $tablehead;
+            @include fonts(400, 12px, 18px);
+        }
+
+        &:active,
+        &:focus {
+            background-image: none;
+            border: 1px solid $tablehead;
+            outline: none;
+        }
+    }
+    .back-aside__item {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        padding-top: 10px;
+        display: none;
+        position: relative;
+        &-heading {
+            margin-left: 10px;
+            @include fonts(500, 18px, 21px);
+        }
+        &-table {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 0;
+            overflow-x: scroll;
+          
+            &__head {
+                & th {
+                    min-width: 170px;
+                    text-align: center;
+                }
+            }
+            &__body {
+                & td {
+                    text-align: center;
+                }
+            }
+            &__foot {
+                & td {
+                    text-align: center;
+                }
+            }
+        }
+        &-search {
+            left: 10px;
+            top: 63px;
+            width: 165px;
+        }
+        .back-aside {
+            width: 100%;
+            @include flex(column, center, flex-start);
+            &__item {
+                margin-left: 10px;
+                color: $text;
+                @include fonts(500, 12px, 12px);
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+    

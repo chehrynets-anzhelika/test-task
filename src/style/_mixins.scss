@@ -45,8 +45,3 @@ $grid-breakpoints: (
   font-size: $b;
   line-height: $c;
 }
-
-@mixin margin($a, $b) {
-  margin-top: $a;
-  margin-bottom: $b;
-}

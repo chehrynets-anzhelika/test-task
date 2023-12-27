@@ -1,0 +1,122 @@
+.aside {
+    width: 306px;
+    background-color: $hoverColor;
+    padding-top: 36px;
+    padding-left: 28px;
+    position: relative;
+
+    &-logo {
+        width: 195px;
+        height: 39px;
+        @include flex(row, flex-start, center);
+        gap: 8px;
+
+        &__heading {
+            color: $text;
+            @include fonts(600, 26px, 39px);
+
+            &::after {
+                content: "v.01";
+                top: 54px;
+                left: 227px;
+                @include fonts(500, 10px, 15px);
+                color: $headingPseudoColor;
+                position: absolute;
+            }
+        }
+    }
+
+    &-list {
+        @include flex(column, center, flex-start);
+        margin-top: 64px;
+
+        &__item {
+            display: inline-flex;
+            position: relative;
+            width: 250px;
+            height: 46px;
+            padding: 11px;
+            gap: 14px;
+            cursor: pointer;
+            @include fonts(500, 14px, 21px);
+            align-items: center;
+            color: $asidetext;
+            border-radius: 8px;
+            transition:
+                background-color .2s ease,
+                color .2s ease;
+
+            &-name {
+                margin: 0;
+            }
+
+            &::after {
+                content: url("./images/svg/chevron-right.svg");
+                width: 4px;
+                height: 8px;
+                right: 18px;
+                top: 15px;
+                position: absolute;
+            }
+
+            &-icon--hover {
+                display: none;
+            }
+
+            &:hover {
+                background-color: $hoverBackground;
+                color: $hoverColor;
+
+                .aside-list__item-icon--hover {
+                    display: block;
+                }
+
+                .aside-list__item-icon {
+                    display: none;
+                }
+
+                &::after {
+                    content: url("./images/svg/chevron-right-hover.svg");
+                }
+
+            }
+        }
+    }
+
+    &-admin {
+        position: absolute;
+        bottom: 76px;
+        @include flex(row, flex-start, center);
+        gap: 12px;
+
+        &__info {
+            &--name {
+                @include fonts(500, 14px, 21px);
+                color: $text;
+                margin: 0;
+            }
+
+            &--role {
+                @include fonts(400, 12px, 18px);
+                color: $roleColor;
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .aside {
+        width: 90%;
+        height: 100vh;
+        margin: 0 auto;
+        &-list {
+            &__item {
+                width: 100%;
+            }
+        }
+        &-admin {
+            bottom: 30px;
+        }
+    }
+}

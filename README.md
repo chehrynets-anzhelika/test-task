@@ -1,14 +1,20 @@
-# Veggieboost
+# Test task
 
 **Description**
 
-This educational project is a landing page for purchasing vegetables. The site is responsive and will display well on various devices.  
+This test task includes layout: 
 
-When you click on the Order button, you can select products and place an order.  
+1. For a layout width of 1440px. 
+2. For the mobile version from 360px to 640px.
 
-After submitting the form, the data goes to Google Sheets(Sheet2). Also, after the user places a callback order and sends their phone number, their number goes to Google Sheets(Sheet1).  
+The reference layout can be seen at this link: <a href="https://www.figma.com/file/3jPRRdGbHJbOT9P61KxT2y/CRM-Dashboard-Customers?type=design&node-id=501-2&mode=design&t=WWuq0W8v415qmzJb-0" target="_blank">this link</a>
 
- You can see this table by following <a href="https://docs.google.com/spreadsheets/d/1jqEu59eR0sIh6Mvi31GnyQi3JMdF34JFTMaMcAVW1Iw/edit?usp=sharing" target="_blank">this link</a> and check the result.  
+There is no reference for the mobile version, styles are made at your discretion. 
+
+The functionality of the mobile version works as shown in the screenshot below:
+
+<img src="./src/images/read/mobile-aside.png" alt="mobile-aside-photo">
+<img src="./src/images/read/mobile-main.png" alt="mobile-main-photo">
 
 __________________________
 **Instruction**
@@ -47,8 +53,6 @@ npm run build-prod
 npm run clear
 ```
 
-Follow <a href="https://www.figma.com/file/jGCCcfdvsxo3tYTdlApR1i/Veggie-boost?type=design&node-id=93-32&mode=design&t=OiNT860rHyhDFilJ-0" target="_blank">this link</a> to see the project reference.
-
-Follow <a href="https://chehrynets-anzhelika.github.io/veggieboost/" target="_blank">this link</a> to see the project deployment.
+Follow <a href="" target="_blank">this link</a> to see the project deployment.
 
 

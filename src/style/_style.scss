@@ -1,34 +1,11 @@
 body {
     color: $text;
-    user-select: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
-    padding: 0 20px 0 20px;
+    max-width: 1440px;
     margin: 0 auto;
-    max-width: 1280px;
-}
-
-.section-title {
-    text-align: center;
-    text-transform: uppercase;
-    @include fonts(500, 28px, 32px);
-    margin: 0 auto;
-    @include breakpoint-mf("md") {
-        &--position {
-           width: 50%; 
-        @include breakpoint-mf("xl") {
-            margin: 0;
-            text-align: left;
-        } 
-        }
-    }
-    @include breakpoint-mf("md") {
-        @include fonts(500, 40px, 44px);
-    }
-    @include breakpoint-mf("xl") {
-        @include fonts(500, 48px, 50px);
-    }
-    
+    display: flex;
+    background-color: $bodyBackground;
 }
