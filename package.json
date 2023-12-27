@@ -1,7 +1,7 @@
 {
   "name": "veggieboost",
   "version": "1.0.0",
-  "description": "Landing page adaptable for computer, tablet and phone",
+  "description": "Test task",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
