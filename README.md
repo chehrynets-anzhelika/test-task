@@ -53,6 +53,6 @@ npm run build-prod
 npm run clear
 ```
 
-Follow <a href="" target="_blank">this link</a> to see the project deployment.
+Follow <a href="https://chehrynets-anzhelika.github.io/test-task/" target="_blank">this link</a> to see the project deployment.
 
 
